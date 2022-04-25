@@ -79,7 +79,7 @@ public class HumanController extends Application {
                 // uncomment this block to send the MAKE_MOVE message for testing
                 //********************************
                 Move move = new Move(0,2,'X', "room1");
-                Object message = new Message(move, sendType.MAKE_MOVE);
+                Object message = new Message(move, HumanTypes.MAKE_MOVE);
                 //********************************
 
 

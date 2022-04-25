@@ -1,6 +1,6 @@
 package com.example.networkdemo;
 
-public enum ReceiveType implements Types {
+public enum ReceiveType implements Typess {
     GAME_CREATED ("New game created."),
     GAME_REJECTED ("'Create Game' rejected."),
     JOIN_SUCCESS ("Joined Game Successfully."),

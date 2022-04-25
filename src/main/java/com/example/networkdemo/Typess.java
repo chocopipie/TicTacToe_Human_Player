@@ -1,5 +1,6 @@
 package com.example.networkdemo;
 
-public interface Types {
+public interface Typess {
     String getDescription();
 }
+

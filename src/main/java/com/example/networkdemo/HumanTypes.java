@@ -1,6 +1,6 @@
 package com.example.networkdemo;
 
-public enum sendType implements Types{
+public enum HumanTypes implements Typess{
     CREATE_GAME ("Create a new game"),
     JOIN_GAME ("Join an existing game"),
     MAKE_MOVE ("Make a move"),
@@ -12,7 +12,7 @@ public enum sendType implements Types{
 
     private String description;
 
-    private sendType(String description){
+    private HumanTypes(String description){
 
         this.description = description;
     }
