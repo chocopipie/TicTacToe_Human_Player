@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="Adding Move from Client">
+    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="works with current Server: serverMessages2&#10;&#10;will add switch">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/TicTacToeUIBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/ReceiveType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/ReceiveType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Types.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/sendType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -115,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650920470980</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="works with current Server: serverMessages2&#10;&#10;will add switch">
+      <created>1650923949995</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650923949995</updated>
+    </task>
+    <task id="LOCAL-00005" summary="works with current Server: serverMessages2&#10;&#10;will add switch">
+      <created>1650923987817</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650923987817</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding HumanController" />
     <MESSAGE value="Adding Move from Client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Move from Client" />
+    <MESSAGE value="works with current Server: serverMessages2&#10;&#10;will add switch" />
+    <option name="LAST_COMMIT_MESSAGE" value="works with current Server: serverMessages2&#10;&#10;will add switch" />
   </component>
 </project>
