@@ -13,8 +13,6 @@ import javafx.stage.Stage;
 
 public class HumanController extends Application {
     // IO streams
-//    DataOutputStream toServer = null;
-//    DataInputStream fromServer = null;
     ObjectOutputStream toServer = null;
     ObjectInputStream fromServer = null;
 

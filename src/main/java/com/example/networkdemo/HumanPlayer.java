@@ -6,7 +6,7 @@ public class HumanPlayer {
 
     private String userName;
     private String room_id;
-    private int port = 8000;
+
 
     //Constructor
     public HumanPlayer (String name){
