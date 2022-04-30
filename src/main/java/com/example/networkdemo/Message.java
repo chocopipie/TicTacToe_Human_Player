@@ -2,7 +2,7 @@ package com.example.networkdemo;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
-import com.example.networkdemo.Typess;
+//import com.example.networkdemo.Types;
 
 public class Message implements Serializable {
 

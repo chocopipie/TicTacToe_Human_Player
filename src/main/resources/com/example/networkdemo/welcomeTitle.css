@@ -1,0 +1,66 @@
+root {
+    display: block;
+}
+/*The .root style class is applied to the root node of the Scene instance.
+* Since all nodes in a scene are descendant of the root node, styles in
+* the .root class are applied to all the nodes..root class can be used to
+* define default values for font-size, font-family etc. to provide
+* consistency in the UI.*/
+.root {
+    -fx-pref-width: 800px;
+    -fx-pref-height: 400px;
+    -fx-background-image: url(../../../images/woodTexture.jpg);
+        -fx-border-color: #ff8000;
+        -fx-border-width: 3 2 2 2;
+}
+/*.border {
+    -fx-pref-width: 800px;
+    -fx-pref-height: 400px;
+    -fx-background-image: url(../../../images/border4.png);
+    -fx-background-size: 100% 100%;
+
+}*/
+/*Sets location and size of class. Also sets background and background size*/
+.banner {
+    -fx-translate-x: 100;
+    -fx-translate-y: 80;
+    -fx-pref-width: 600;
+    -fx-pref-height: 200;
+    -fx-background-image: url(../../../images/banner.png);
+    -fx-background-size: 100% 100%;
+}
+/*Sets text font, text size and text color*/
+#title-text {
+    -fx-font-family: 'Times New Roman';
+    -fx-font-size: 84px;
+    -fx-fill: #a86926;
+}
+/*Sets location and width of a text box. Also sets text font, text size and text color*/
+#copy-right-text {
+    -fx-translate-x: 325;
+    -fx-translate-y: 350;
+    -fx-pref-width: 150;
+    -fx-font-size: 16px;
+    -fx-fill: white;
+}
+/*For all buttons*/
+/*Sets button background, button size, text size and text color*/
+.button {
+    -fx-background-image: url(../../../images/buttonTexture.png);
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+}
+/*Adds the single-player image to a button*/
+.single-player-button {
+    -fx-graphic: url(../../../images/person.png);
+}
+/*Adds the multi-player image to a button*/
+.multi-player-button {
+    -fx-graphic: url(../../../images/person-group.png);
+}
+/*For all buttons*/
+/*Highlights the button, the mouse is over*/
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
