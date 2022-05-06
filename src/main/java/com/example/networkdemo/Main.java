@@ -75,7 +75,8 @@ public class Main extends Application {
                     while (true) {
 
                         // read the message sent to this client
-                        Object response = fromServer.readObject();
+                        Object response = fromServer.readObject(); //java.base/java.io.ObjectInputStream$BlockDataInputStream.peekByte ERROR,
+                                                                   //coming back to this later
 
                         // Downcast message from Object
                         Message message = (Message) response;
@@ -91,7 +92,7 @@ public class Main extends Application {
                             try {
                                 switch (type) {
                                     case "MULTIGAME_CREATED":
-                                        SceneController.switchToTicTacToeMultiplayer(stage);
+                                        //SceneController.switchToTicTacToeMultiplayer(stage);
                                         //token = (char)message.getData();
                                         //System.out.println(token);
 

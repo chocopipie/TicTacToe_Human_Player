@@ -27,6 +27,7 @@ public class SceneController extends TicTacToe{
     private static Parent root;
     private static Object message = new Message(null, null);
 
+
     public void switchToWelcome(ActionEvent event) throws IOException {
         root = FXMLLoader.load(SceneController.class.getResource("welcome.fxml"));
         stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
@@ -51,17 +52,28 @@ public class SceneController extends TicTacToe{
 
     }
 
+
+    public void switchToLobby(ActionEvent event) throws IOException{
+        root = root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
+        stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene); //NULL
+        stage.show();
+    }
+
+    //once CREATE_MULTIGAME is successful, then update board
+    public void updateLobby(){
+
+
+    }
+
+
     //will return message
     public static void sendMessage() throws IOException {
 
         toServer.writeObject(message);
     }
 
-    public void RequestMultiGame(ActionEvent event) throws IOException {
-        System.out.println("multi pressed");
-        message = new Message("Multi", HumanTypes.CREATE_MULTIGAME);
-        sendMessage();
-    }
 
     public void RequestSoloGame(ActionEvent event) throws IOException {
 //        Object message = new Message("single", HumanTypes.CREATE_SOLOGAME);
@@ -188,6 +200,7 @@ public class SceneController extends TicTacToe{
         }
     }
 
+
     @FXML
     public void resetBoard(){
         /* Original test case
@@ -219,5 +232,21 @@ public class SceneController extends TicTacToe{
         ((Button)(root.lookup("#button9"))).setUserData(null);
 
     }
+
+    public void addChannel(ActionEvent actionEvent) throws IOException {
+        //send CREATE_MULTIGAME message to server
+        System.out.println("multi pressed");
+        message = new Message("Multi", HumanTypes.CREATE_MULTIGAME);
+        sendMessage();
+
+    }
+
+
+
+//    public void RequestMultiGame(ActionEvent event) throws IOException {
+//        System.out.println("multi pressed");
+//        message = new Message("Multi", HumanTypes.CREATE_MULTIGAME);
+//        sendMessage();
+//    }
 
 }
