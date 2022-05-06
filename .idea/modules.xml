@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Human_Player.iml" filepath="$PROJECT_DIR$/.idea/Human_Player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/HumanPlayer-HumanPlayerWithRooms.iml" filepath="$PROJECT_DIR$/.idea/HumanPlayer-HumanPlayerWithRooms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HumanPlayer-HumanPlayerWithRooms/Tic-Tac-Toe.iml" filepath="$PROJECT_DIR$/HumanPlayer-HumanPlayerWithRooms/Tic-Tac-Toe.iml" />
     </modules>
   </component>
 </project>
