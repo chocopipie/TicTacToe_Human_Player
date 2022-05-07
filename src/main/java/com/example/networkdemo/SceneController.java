@@ -8,10 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -19,8 +23,9 @@ import java.util.Objects;
 import static com.example.networkdemo.Main.toServer;
 import static com.example.networkdemo.Main.token;
 
+import static com.example.networkdemo.Main.playerUserName;
 
-public class SceneController extends TicTacToe{
+public class SceneController extends TicTacToe {
 
     private static Stage stage;
     private static Scene scene;
@@ -28,14 +33,14 @@ public class SceneController extends TicTacToe{
     private static Object message = new Message(null, null);
 
     public void switchToWelcome(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(SceneController.class.getResource("welcome.fxml"));
+        root = FXMLLoader.load(SceneController.class.getResource("/fxml/welcome.fxml"));
         stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
     }
 
     public static void switchToTicTacToeMultiplayer(Stage stage) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("tic-tac-toe-multiplayer.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("/fxml/tic-tac-toe-multiplayer.fxml")));
         //stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
         stage.setScene(scene);
@@ -78,10 +83,6 @@ public class SceneController extends TicTacToe{
     @FXML
     GridPane board00;
 
-//    @FXML
-//    Button button01;
-
-
     public void updateLabel(char t) {
         if (token == t) {
             //int playerOScoreUpdated = Integer.parseInt(playerOScore.getText()) + 1;
@@ -115,48 +116,41 @@ public class SceneController extends TicTacToe{
 
         //Button box = (Button)root.lookup("#button05");
         Button box = null;
-        int temp = 0;
 
-        if (row == 0) {
-            temp = row + col;
-            System.out.println("temp: " + temp);
-            switch (row + col){
-                case 0:
-                    box = (Button)root.lookup("#button1");
-                    break;
-                case 1:
-                    box = (Button)root.lookup("#button2");
-                    break;
-                case 2:
-                    box = (Button)root.lookup("#button3");
-                    break;
-            }}
-        else if (row == 1) {
-            temp = row + col + 2;
-            System.out.println("temp: " + temp);
-            switch (temp) {
-                case 3: box = (Button)root.lookup("#button4");
-                    break;
-                case 4: box = (Button)root.lookup("#button5");
-                    break;
-                case 5: box = (Button)root.lookup("#button6");
-                    break;
-            }
-        }
-        else if (row == 2){
-            temp = row + col + 4;
-            System.out.println("temp: " + temp);
-            switch (temp) {
-                case 6: box = (Button)root.lookup("#button7");
-                    break;
-                case 7: box = (Button)root.lookup("#button8");
-                    break;
-                case 8: box = (Button)root.lookup("#button9");
-                    break;
-            }
-        }
-        else{
-            System.out.println("nothing set");
+        switch (row) {
+            case 0:
+                switch (col) {
+                    case 0:
+                        box = (Button)root.lookup("#button1");
+                        break;
+                    case 1:
+                        box = (Button)root.lookup("#button2");
+                        break;
+                    case 2:
+                        box = (Button)root.lookup("#button3");
+                        break;
+                }
+                break;
+            case 1:
+                switch (col) {
+                    case 0: box = (Button)root.lookup("#button4");
+                        break;
+                    case 1: box = (Button)root.lookup("#button5");
+                        break;
+                    case 2: box = (Button)root.lookup("#button6");
+                        break;
+                }
+                break;
+            case 2:
+                switch (col) {
+                    case 0: box = (Button)root.lookup("#button7");
+                        break;
+                    case 1: box = (Button)root.lookup("#button8");
+                        break;
+                    case 2: box = (Button)root.lookup("#button9");
+                        break;
+                }
+                break;
         }
 
         printMove(box, token);

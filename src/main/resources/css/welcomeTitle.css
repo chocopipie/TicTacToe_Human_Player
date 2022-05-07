@@ -7,9 +7,9 @@ root {
 * define default values for font-size, font-family etc. to provide
 * consistency in the UI.*/
 .root {
-    -fx-pref-width: 800px;
-    -fx-pref-height: 400px;
-    -fx-background-image: url(../../../images/woodTexture.jpg);
+    -fx-pref-width: 1000px;
+    -fx-pref-height: 500px;
+    -fx-background-image: url(../images/woodTexture.jpg);
         -fx-border-color: #ff8000;
         -fx-border-width: 3 2 2 2;
 }
@@ -22,11 +22,11 @@ root {
 }*/
 /*Sets location and size of class. Also sets background and background size*/
 .banner {
-    -fx-translate-x: 100;
-    -fx-translate-y: 80;
+    -fx-translate-x: 200;
+    -fx-translate-y: 160;
     -fx-pref-width: 600;
     -fx-pref-height: 200;
-    -fx-background-image: url(../../../images/banner.png);
+    -fx-background-image: url(../images/banner.png);
     -fx-background-size: 100% 100%;
 }
 /*Sets text font, text size and text color*/
@@ -37,8 +37,8 @@ root {
 }
 /*Sets location and width of a text box. Also sets text font, text size and text color*/
 #copy-right-text {
-    -fx-translate-x: 325;
-    -fx-translate-y: 350;
+    -fx-translate-x: 425;
+    -fx-translate-y: 600;
     -fx-pref-width: 150;
     -fx-font-size: 16px;
     -fx-fill: white;
@@ -46,18 +46,18 @@ root {
 /*For all buttons*/
 /*Sets button background, button size, text size and text color*/
 .button {
-    -fx-background-image: url(../../../images/buttonTexture.png);
+    -fx-background-image: url(../images/buttonTexture.png);
     -fx-background-size: 100% 100%;
     -fx-background-color: transparent;
     -fx-font-size: 20px;
 }
 /*Adds the single-player image to a button*/
 .single-player-button {
-    -fx-graphic: url(../../../images/person.png);
+    -fx-graphic: url(../images/person.png);
 }
 /*Adds the multi-player image to a button*/
 .multi-player-button {
-    -fx-graphic: url(../../../images/person-group.png);
+    -fx-graphic: url(../images/person-group.png);
 }
 /*For all buttons*/
 /*Highlights the button, the mouse is over*/
