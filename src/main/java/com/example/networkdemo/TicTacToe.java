@@ -16,8 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.List;
 
-import static com.example.networkdemo.Main.currentToken;
-import static com.example.networkdemo.Main.token;
+import static com.example.networkdemo.Main.*;
 
 //import static com.example.networkdemo.Main.toServer;
 
@@ -30,6 +29,11 @@ public class TicTacToe {
 
     static int player = 0;
 
+//    private char token = 'z';     //X or O
+//    char [][]grid = new char[][] {{ ' ', ' ', ' '},
+//            { ' ', ' ', ' '},
+//            { ' ', ' ', ' '}};
+//    char continuePlay = 'X';
 
     @FXML
     GridPane board;
@@ -59,8 +63,6 @@ public class TicTacToe {
         // The source stores a reference to the object where the event initially occurred
         Button box = (Button) event.getSource();
 
-        //char gcToken = Move.getToken();
-
         // set action when left-click on the box
         if (box.getUserData() == null) {
 
@@ -71,11 +73,12 @@ public class TicTacToe {
 
                 System.out.println("row: " + row + " col: " + col);
                 System.out.println(token);
-                Move move = new Move(row, col, token);
+                Move move = new Move(row, col, token, room_id);
+                System.out.println("Room ID: " + room_id);
                 Object message = new Message(move, HumanTypes.MAKE_MOVE);
+                toServer.reset();
                 Main.toServer.writeObject(message);
             }
-
         }
 
     }
