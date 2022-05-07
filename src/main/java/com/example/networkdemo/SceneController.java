@@ -303,7 +303,7 @@ public class SceneController extends TicTacToe {
     private static Scene scene;
     private static Parent root;
     private static Object message = new Message(null, null);
-    private static Vector<GameRoom> gameRooms;
+    private static Vector<GameRoom> gameRooms = new Vector<GameRoom>();
 
     @FXML
     //private static ListView<String> myListView = new ListView<>();
@@ -362,10 +362,16 @@ public class SceneController extends TicTacToe {
 
 
         System.out.println("INSIDE updateLobby()\n");
-        String[] s = {"Hello", "Hi", "Buenos dias"};
+        //String[] s = {"Hello", "Hi", "Buenos dias"};
 
-        myListView.getItems().addAll(s);
-        System.out.println(myListView.getItems()); //will be printed
+        //myListView.getItems().addAll(s);
+        ObservableList<String> items =FXCollections.observableArrayList (
+                "Single", "Double", "Suite", "Family App");
+        ((ListView<String>)(root.lookup("myListView"))).setItems(items);
+        //System.out.println(myListView.getItems()); //will be printed
+
+
+
 
 
 
