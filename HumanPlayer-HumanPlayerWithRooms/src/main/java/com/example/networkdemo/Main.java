@@ -22,7 +22,7 @@ public class Main extends Application {
     static char token;  // token of this client
     static String room_id;  // room id of this client
     static char currentToken = 'X';
-    static String userName = "VAN";
+    static String userName = "KENN";
     static ObjectInputStream fromServer = null;
     static ObjectOutputStream toServer = null;
     private List<HumanPlayer> human=new ArrayList<HumanPlayer>();
@@ -113,7 +113,6 @@ public class Main extends Application {
 //                                                + existingRoom.getPlayer2().getUserName());
  //                                       break;
                                     case "JOIN_SUCCESS":
-                                        userName = "VY";
                                         // get room created, the token
                                         GameRoom roomJoined = (GameRoom) message.getData();
                                         HumanPlayer thisPlayer2 = roomJoined.getPlayer2();
@@ -137,21 +136,33 @@ public class Main extends Application {
                                         break;
                                     case "MOVE_MADE" :
                                         Move move = (Move)message.getData();
-                                        editor.setMove(move.getX(), move.getY(), move.getToken());
+                                        System.out.println("MY ID: " + room_id);
+                                        System.out.println("CURRENT ID: " + move.getRoom_id());
+                                        //editor.setMove(move.getX(), move.getY(), move.getToken());
+                                        if (room_id.equals(move.getRoom_id()))
+                                            editor.setMove(move);
                                         break;
                                     case "MOVE_REJECTED" :
                                         break;
                                     case "PLAYER_TURN" :
-                                        currentToken = (char) message.getData();
-                                        editor.updateLabel(currentToken);
-                                        System.out.println("Current token is: " + currentToken);
+                                        Move moveWithTokenChanged = (Move) message.getData();
+                                        if (room_id.equals(moveWithTokenChanged.getRoom_id())) {
+                                            currentToken = moveWithTokenChanged.getToken();
+                                            editor.updateLabel(currentToken);
+                                            System.out.println("Current token is: " + currentToken);
+                                        }
                                         break;
                                     case "WINNER" :
-                                        editor.updateScoreboard((char) message.getData());
-                                        editor.resetBoard();
+                                        Move moveWithWinner = (Move) message.getData();
+                                        if (room_id.equals(moveWithWinner.getRoom_id())) {
+                                            editor.updateScoreboard(moveWithWinner.getToken());
+                                            editor.resetBoard();
+                                        }
                                         break;
                                     case "TIE":
-                                        editor.resetBoard();
+                                        String currentRoomID = (String) message.getData();
+                                        if (room_id.equals(currentRoomID))
+                                            editor.resetBoard();
                                         break;
                                     case "ROOM_ADDED":
                                         RoomList roomList = (RoomList) message.getData();

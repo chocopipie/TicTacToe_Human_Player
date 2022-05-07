@@ -74,7 +74,9 @@ public class TicTacToe {
                 System.out.println("row: " + row + " col: " + col);
                 System.out.println(token);
                 Move move = new Move(row, col, token, room_id);
+                System.out.println("Room ID: " + room_id);
                 Object message = new Message(move, HumanTypes.MAKE_MOVE);
+                toServer.reset();
                 Main.toServer.writeObject(message);
             }
         }

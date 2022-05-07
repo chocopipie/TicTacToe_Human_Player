@@ -55,12 +55,13 @@ public class SceneController extends TicTacToe{
     public static void sendMessage() throws IOException {
 
         toServer.writeObject(message);
+        toServer.reset();
     }
 
     public void RequestMultiGame(ActionEvent event) throws IOException {
         // later on, username will be the name that user entered
         // for now, this is hardcoded
-        String username = "VAN";
+        String username = "VANN";
         System.out.println("multi pressed");
         message = new Message(username, HumanTypes.SEND_NAME);
         sendMessage();
@@ -75,11 +76,11 @@ public class SceneController extends TicTacToe{
 
     public void RequestJoinRoom(ActionEvent event) throws IOException{
         System.out.println("Join pressed");
-        String username = "VY";
+        String username = "KENN";
         message = new Message(username, HumanTypes.SEND_NAME);
         sendMessage();
         // edit - later on will send player's id
-        message = new Message("CVHiGql", HumanTypes.JOIN_GAME);
+        message = new Message("xMrprz5", HumanTypes.JOIN_GAME);
 
         sendMessage();
     }
@@ -121,57 +122,63 @@ public class SceneController extends TicTacToe{
         }
     }
 
-    public void setMove(int row, int col, char token){
+    public void setMove(Move move){
+        int row = move.getX();
+        int col = move.getY();
+        char token = move.getToken();
+        String current_room_id = move.getRoom_id();
 
-        //Button box = (Button)root.lookup("#button05");
-        Button box = null;
-        int temp = 0;
+        if (Main.room_id.equals(current_room_id)) {
+            //Button box = (Button)root.lookup("#button05");
+            Button box = null;
+            int temp = 0;
 
-        if (row == 0) {
-            temp = row + col;
-            System.out.println("temp: " + temp);
-            switch (row + col){
-                case 0:
-                    box = (Button)root.lookup("#button1");
-                    break;
-                case 1:
-                    box = (Button)root.lookup("#button2");
-                    break;
-                case 2:
-                    box = (Button)root.lookup("#button3");
-                    break;
-        }}
-        else if (row == 1) {
-            temp = row + col + 2;
-            System.out.println("temp: " + temp);
-            switch (temp) {
-                case 3: box = (Button)root.lookup("#button4");
-                    break;
-                case 4: box = (Button)root.lookup("#button5");
-                    break;
-                case 5: box = (Button)root.lookup("#button6");
-                    break;
+            if (row == 0) {
+                temp = row + col;
+                System.out.println("temp: " + temp);
+                switch (row + col){
+                    case 0:
+                        box = (Button)root.lookup("#button1");
+                        break;
+                    case 1:
+                        box = (Button)root.lookup("#button2");
+                        break;
+                    case 2:
+                        box = (Button)root.lookup("#button3");
+                        break;
+                }}
+            else if (row == 1) {
+                temp = row + col + 2;
+                System.out.println("temp: " + temp);
+                switch (temp) {
+                    case 3: box = (Button)root.lookup("#button4");
+                        break;
+                    case 4: box = (Button)root.lookup("#button5");
+                        break;
+                    case 5: box = (Button)root.lookup("#button6");
+                        break;
+                }
             }
-        }
-        else if (row == 2){
-            temp = row + col + 4;
-            System.out.println("temp: " + temp);
-            switch (temp) {
-                case 6: box = (Button)root.lookup("#button7");
-                    break;
-                case 7: box = (Button)root.lookup("#button8");
-                    break;
-                case 8: box = (Button)root.lookup("#button9");
-                    break;
+            else if (row == 2){
+                temp = row + col + 4;
+                System.out.println("temp: " + temp);
+                switch (temp) {
+                    case 6: box = (Button)root.lookup("#button7");
+                        break;
+                    case 7: box = (Button)root.lookup("#button8");
+                        break;
+                    case 8: box = (Button)root.lookup("#button9");
+                        break;
+                }
             }
-        }
-        else{
-            System.out.println("nothing set");
-        }
+            else{
+                System.out.println("nothing set");
+            }
 
-        printMove(box, token);
+            printMove(box, token);
 
-        //Button box = (Button) board00.getChildren().get(1);
+            //Button box = (Button) board00.getChildren().get(1);
+        }
     }
 
     private void printMove (Button button, char token) {

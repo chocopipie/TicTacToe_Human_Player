@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Tic-Tac-Toe" />
+        <module name="HumanPlayer-HumanPlayerWithRooms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="HumanPlayer-HumanPlayerWithRooms" target="1.5" />
       <module name="Tic-Tac-Toe" target="17" />
     </bytecodeTargetLevel>
   </component>
