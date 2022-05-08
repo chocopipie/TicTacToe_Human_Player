@@ -303,10 +303,10 @@ public class SceneController extends TicTacToe {
     private static Scene scene;
     private static Parent root;
     private static Object message = new Message(null, null);
-    private static Vector<GameRoom> gameRooms = new Vector<GameRoom>();
+    private static Vector<String> gameRooms = new Vector<String>();
+    private static Vector<GameRoom> initialList = new Vector<>();
 
     @FXML
-    //private static ListView<String> myListView = new ListView<>();
     private ListView<String> myListView;
 
 
@@ -328,50 +328,49 @@ public class SceneController extends TicTacToe {
 
     public void switchToTicTacToeSingleplayer(ActionEvent event) throws IOException {
 //        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("tic-tac-toe-singleplayer.fxml")));
-//        stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-//        scene = new Scene(root);
-//        stage.setScene(scene);
+////        stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
+////        scene = new Scene(root);
+////        stage.setScene(scene);
 
     }
 
         public void switchToLobby(ActionEvent event) throws IOException{
-        root = root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
         stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
         scene = new Scene(root);
+//        updateLobby(initialList);
         stage.setScene(scene); //NULL
         stage.show();
+
     }
 
 
-    public void updateLobby(Vector<GameRoom> list) {//----------going to use observableList for myListView
-        gameRooms = list;
+    public void updateLobby(Vector<GameRoom> list) throws IOException {
+        //root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
+        //Above: doesnt display strings anymore, but after first human_player, gets "root is null" error
+
+        gameRooms.clear();
+        String temp;
         //create string, for listview object
         //Player1 vs. Player2             #of viewers
         //Player1 vs. (OPEN GAME)         #of viewers
 
-//        for (int i = 0; i < gameRooms.size(); i++) {
-//            String p1 = gameRooms.get(i).getPlayer1().getUserName();
-//            String p2 = gameRooms.get(i).getPlayer2().getUserName();
+        for (int i = 0; i < list.size(); i++) {
+            String p1 = list.get(i).getPlayer1().getUserName();
+            String p2 = list.get(i).getPlayer2().getUserName();
 
-//           myListView.getItems().add(gameRooms.get(i).getPlayer1().getUserName());
-//            System.out.println(gameRooms.get(i).getPlayer1().getUserName());
+            if(p2 == ""){
+                temp = p1 + " vs. (OPEN GAME)";
+            }
+            else{
+                temp = p1 + " vs. " + p2;
+            }
+            gameRooms.add(temp);
+        }
 
-////            System.out.println();
-//        }
-
-
-
-        System.out.println("INSIDE updateLobby()\n");
-        //String[] s = {"Hello", "Hi", "Buenos dias"};
-
-        //myListView.getItems().addAll(s);
-        ObservableList<String> items =FXCollections.observableArrayList (
-                "Single", "Double", "Suite", "Family App");
-        ((ListView<String>)(root.lookup("myListView"))).setItems(items);
-        //System.out.println(myListView.getItems()); //will be printed
-
-
-
+        //ObservableList automatically changes ListView
+        ObservableList<String> items = FXCollections.observableArrayList (gameRooms);
+        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
 
 
 

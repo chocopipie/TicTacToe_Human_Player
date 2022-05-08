@@ -8,7 +8,7 @@
    <children>
       <Button layoutX="440.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToWelcome" prefHeight="35.0" prefWidth="126.0" text="Main" />
       <Button layoutX="300.0" layoutY="345.0" mnemonicParsing="false" onAction="#RequestMultiGame" prefHeight="35.0" prefWidth="126.0" text="Create Game" />
-      <ListView fx:id="myListView" layoutX="40.0" layoutY="83.0" prefHeight="254.0" prefWidth="520.0" />
+      <ListView fx:id="myListView" layoutX="40.0" layoutY="83.0" onMouseClicked="#RequestJoinRoom" prefHeight="254.0" prefWidth="520.0" />
       <Label layoutX="40.0" layoutY="65.0" prefHeight="17.0" prefWidth="520.0" text="Game Rooms                                                               Play Status                                                     View Game" />
 
    </children>
