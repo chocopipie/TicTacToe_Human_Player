@@ -150,7 +150,8 @@ public class SceneController extends TicTacToe {
         ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
 
 //        for(int i = 0; i < items.size(); i++){
-//            System.out.println(items.get(i));
+//            System.o
+//            ut.println(items.get(i));
 //        }
 
 //        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
