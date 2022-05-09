@@ -62,7 +62,5 @@ public class LobbyController extends SceneController{
         else
             System.out.println("root null");
 
-            userName = ((TextField)(stage.getScene().lookup("#nameField"))).getText().trim();
-
     }
 }
