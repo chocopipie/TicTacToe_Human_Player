@@ -50,9 +50,9 @@ public class LobbyController extends SceneController {
         }
 
         //set list to observable list
-//        SceneController.items = FXCollections.observableArrayList (updatedRooms);
-
-        SceneController.setObservableList(updatedRooms);
+//        SceneController.items = FXCollections.observableArrayList (updatedRooms); DID NOT WORK
+//
+     //   SceneController.setObservableList(updatedRooms); DID NOT WORK
 
         System.out.println("TESTNIG OBSERVABLE LIST\n");
         for(int i = 0; i < items.size(); i++){

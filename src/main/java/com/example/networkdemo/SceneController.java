@@ -146,13 +146,14 @@ public class SceneController extends TicTacToe {
 
         LobbyController lc = new LobbyController();
         gameRooms = lc.getRooms();
-//        items = FXCollections.observableArrayList (gameRooms);
+        ObservableList<String> items = FXCollections.observableArrayList (gameRooms);
+        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
 
 //        for(int i = 0; i < items.size(); i++){
 //            System.out.println(items.get(i));
 //        }
 
-        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
+//        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
 
 //        ObservableList<String> items = FXCollections.observableArrayList ("HI", "Bye");
 //
