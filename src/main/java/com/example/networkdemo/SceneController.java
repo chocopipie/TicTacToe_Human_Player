@@ -135,6 +135,8 @@ public class SceneController extends TicTacToe {
         Stage stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
         Scene scene = new Scene(root);
 
+
+
 //        updateLobby(initialList);
         stage.setScene(scene); //NULL
         stage.show();

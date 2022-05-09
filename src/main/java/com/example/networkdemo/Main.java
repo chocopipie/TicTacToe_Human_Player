@@ -199,7 +199,7 @@ public class Main extends Application {
 
                                         Vector<GameRoom> l = rl.getGameRoomList();
                                         LobbyController lobbyCont = new LobbyController();
-                                        lobbyCont.updateLobby(stage,l);
+                                        lobbyCont.updateLobby(l,stage);
                                         break;
 
                                     case "ROOM_ADDED":
@@ -208,7 +208,7 @@ public class Main extends Application {
 
                                         Vector<GameRoom> list = roomList.getGameRoomList();
                                         LobbyController lc = new LobbyController();
-                                        lc.updateLobby(stage, list);
+                                        lc.updateLobby(list, stage);
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");
