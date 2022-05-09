@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="NullPointerException error, line 367">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanTypes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/welcome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/HumanTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/HumanTypes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/LobbyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/LobbyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcome.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="NullPointerException error, line 367" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,6 +53,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="28IUNyTmiyvK0aiAsjMTWqZkSSN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -73,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Server-currentLobby/Server-currentLobby" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Application.Main">

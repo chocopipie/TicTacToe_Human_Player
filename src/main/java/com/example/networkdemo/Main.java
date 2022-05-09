@@ -113,7 +113,10 @@ public class Main extends Application {
                                 switch (type) {
 
                                     case "JOIN_LOBBY":
-                                        editor.switchToLobby(stage);
+                                        String clientName = (String) message.getData();
+                                        System.out.println(clientName);
+                                        if (userName.equals(clientName))
+                                            editor.switchToLobby(stage);
                                         break;
                                     case "MULTIGAME_CREATED":
                                         //token = (char)message.getData();
@@ -126,7 +129,7 @@ public class Main extends Application {
                                             token = thisPlayer.getToken();
                                             System.out.println(token);
                                             System.out.println(room_id);
-                                            //SceneController.switchToTicTacToeMultiplayer(stage);
+                                            SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
                                         break;
                                     case "JOIN_SUCCESS":
@@ -202,7 +205,7 @@ public class Main extends Application {
                                         Vector<GameRoom> list = roomList.getGameRoomList();
                                         LobbyController roomAdded = new LobbyController();
                                         roomAdded.updateLobby(list);
-                                        editor.switchToLobby(stage);
+                                        //editor.switchToLobby(stage);
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");

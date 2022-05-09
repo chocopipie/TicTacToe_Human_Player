@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -87,12 +88,13 @@ public class SceneController extends TicTacToe {
         System.out.println("solo pressed");
     }
 
-    public void RequestJoinRoom(ActionEvent event) throws IOException{
+    public void RequestJoinRoom(MouseEvent event) throws IOException{
         System.out.println("Join pressed");
         message = new Message(userName, HumanTypes.SEND_NAME);
         sendMessage();
+
         // edit - later on will send player's id
-        message = new Message("xMrprz5", HumanTypes.JOIN_GAME);
+        message = new Message("DMZ6opT", HumanTypes.JOIN_GAME);
 
         sendMessage();
     }

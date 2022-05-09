@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Vector;
 
+import static com.example.networkdemo.Main.toServer;
 import static com.example.networkdemo.Main.userName;
 
 public class LobbyController extends SceneController {
@@ -27,6 +28,8 @@ public class LobbyController extends SceneController {
     ListView myListView;
 
     private static Vector<String> updatedRooms = new Vector<String>();
+    private static Object message = new Message(null, null);
+
 
     public void updateLobby(Vector<GameRoom> list) {
         updatedRooms.clear();
@@ -51,6 +54,23 @@ public class LobbyController extends SceneController {
     }
 
 
+//    //will return message
+//    public static void sendMessage() throws IOException {
+//
+//        toServer.writeObject(message);
+//        toServer.reset();
+//    }
+//
+//    public void switchToBoard(ActionEvent event) throws IOException {
+//
+//        System.out.println("Join pressed");
+//        message = new Message(userName, HumanTypes.SEND_NAME);
+//        sendMessage();
+//        // edit - later on will send player's id
+//        message = new Message("xMrprz5", HumanTypes.JOIN_GAME);
+//
+//        sendMessage();
+//    }
 
 //    public Vector<String> getRooms(){
 //
