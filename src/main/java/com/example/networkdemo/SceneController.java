@@ -32,6 +32,10 @@ public class SceneController extends TicTacToe {
     public static Vector<String> gameRooms = new Vector<String>();
     private static Vector<GameRoom> initialList = new Vector<>();
 
+    public static ObservableList<String> items = FXCollections.observableArrayList ();
+
+    private static boolean update = true;
+
     @FXML
     private ListView<String> myListView;
 
@@ -74,6 +78,8 @@ public class SceneController extends TicTacToe {
         sendMessage();
         message = new Message("Multi", HumanTypes.CREATE_MULTIGAME);
         sendMessage();
+
+        switchToLobby(event);
     }
 
     public void RequestSoloGame(ActionEvent event) throws IOException {
@@ -83,8 +89,7 @@ public class SceneController extends TicTacToe {
 
     public void RequestJoinRoom(ActionEvent event) throws IOException{
         System.out.println("Join pressed");
-        String username = "KENN";
-        message = new Message(username, HumanTypes.SEND_NAME);
+        message = new Message(userName, HumanTypes.SEND_NAME);
         sendMessage();
         // edit - later on will send player's id
         message = new Message("xMrprz5", HumanTypes.JOIN_GAME);
@@ -131,15 +136,32 @@ public class SceneController extends TicTacToe {
 
     public void switchToLobby(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
-        System.out.println("Root chged to: " + root);
+        //System.out.println("Root changed to: " + root);
         Stage stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
         Scene scene = new Scene(root);
-
-
-
-//        updateLobby(initialList);
         stage.setScene(scene); //NULL
         stage.show();
+
+
+
+        LobbyController lc = new LobbyController();
+        gameRooms = lc.getRooms();
+//        items = FXCollections.observableArrayList (gameRooms);
+
+//        for(int i = 0; i < items.size(); i++){
+//            System.out.println(items.get(i));
+//        }
+
+        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
+
+//        ObservableList<String> items = FXCollections.observableArrayList ("HI", "Bye");
+//
+//        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
+
+    }
+
+    public static void setObservableList(Vector<String> list ){
+        items = FXCollections.observableArrayList (gameRooms);
 
     }
 

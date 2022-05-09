@@ -21,26 +21,21 @@ import java.util.Vector;
 
 import static com.example.networkdemo.Main.userName;
 
-public class LobbyController extends SceneController{
+public class LobbyController extends SceneController {
 
     @FXML
     ListView myListView;
 
-    public void updateLobby(Vector<GameRoom> list, Stage stage) throws IOException {
-        //root = FXMLLoader.load(getClass().getResource("lobby.fxml"));
-        //Above: doesnt display strings anymore, but after first human_player, gets "root is null" error
-        root = FXMLLoader.load(getClass().getResource("lobby.fxml"));
-        //Above: doesnt display strings anymore, but after first human_player, gets "root is null" error
-        stage.getScene().getWindow();
-        Scene sc = new Scene(root);
-        stage.setScene(sc); //NULL
+    private static Vector<String> updatedRooms = new Vector<String>();
+    ObservableList<String> items = FXCollections.observableArrayList ();
 
-        gameRooms.clear();
+
+    public void updateLobby(Vector<GameRoom> list) {
+
+        updatedRooms.clear();
         String temp;
-        //create string, for listview object
-        //Player1 vs. Player2             #of viewers
-        //Player1 vs. (OPEN GAME)         #of viewers
 
+        //create strings and store them in updatedRooms Vector.
         for (int i = 0; i < list.size(); i++) {
             String p1 = list.get(i).getPlayer1().getUserName();
             String p2 = list.get(i).getPlayer2().getUserName();
@@ -51,62 +46,38 @@ public class LobbyController extends SceneController{
             else{
                 temp = p1 + " vs. " + p2;
             }
-            gameRooms.add(temp);
+            updatedRooms.add(temp);
         }
 
-        //ObservableList automatically changes ListView
-        ObservableList<String> items = FXCollections.observableArrayList (gameRooms);
+        //set list to observable list
+//        SceneController.items = FXCollections.observableArrayList (updatedRooms);
 
-        if(root != null){
-            ListView<String> listOfGames = ((ListView<String>)(root.lookup("#myListView")));
+        SceneController.setObservableList(updatedRooms);
 
-            listOfGames.setItems(items);
-
-            System.out.println(root);
-//        System.out.println(myListView);
+        System.out.println("TESTNIG OBSERVABLE LIST\n");
+        for(int i = 0; i < items.size(); i++){
+            System.out.println(items.get(i));
+            System.out.println();
         }
-        else
-            System.out.println("root null");
+        System.out.println("END\n");
 
     }
 
-//    @FXML
-//    ListView myListView;
-//
-//    public void updateLobby( Vector<GameRoom> list, Stage s) throws IOException {
-//        //root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
-//        root = FXMLLoader.load(getClass().getResource("lobby.fxml"));
-//        //Above: doesnt display strings anymore, but after first human_player, gets "root is null" error
-//        s.getScene().getWindow();
-//        Scene sc = new Scene(root);
-//        s.setScene(sc); //NULL
-        //s.show();
-//
-//        gameRooms.clear();
-//        String temp;
-//        //create string, for listview object
-//        //Player1 vs. Player2             #of viewers
-//        //Player1 vs. (OPEN GAME)         #of viewers
-//
-//        for (int i = 0; i < list.size(); i++) {
-//            String p1 = list.get(i).getPlayer1().getUserName();
-//            String p2 = list.get(i).getPlayer2().getUserName();
-//
-//            if(p2 == ""){
-//                temp = p1 + " vs. (OPEN GAME)";
-//            }
-//            else{
-//                temp = p1 + " vs. " + p2;
-//            }
-//            gameRooms.add(temp);
-//        }
-//
-//        //ObservableList automatically changes ListView
-//        ObservableList<String> items = FXCollections.observableArrayList (gameRooms);
-//        ListView<String> listOfGames = ((ListView<String>)(root.lookup("#myListView")));
-//
-//
-////
-//    }
+    public Vector<String> getRooms(){
+
+        System.out.println("RETURNING OBSERVABLE LIST\n");
+        for(int i = 0; i < items.size(); i++){
+            System.out.println(items.get(i));
+            System.out.println();
+        }
+
+        System.out.println("ending retrun\n");
+
+        return updatedRooms;
+
+
+
+    }
+
 }
 

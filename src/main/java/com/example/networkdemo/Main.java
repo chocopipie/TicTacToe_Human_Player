@@ -103,19 +103,6 @@ public class Main extends Application {
                         String type = String.valueOf(message.getType());
                         System.out.println("type of message: " + type);
 
-//                        //theoritcally, should be called when player connects to server
-//                        if (message.getType().equals("SEND_GAMECHANNEL")){
-//                            RoomList rl = (RoomList) message.getData();
-//                            for(int i = 0; i < rl.size(); i++){
-//                                System.out.println("CHECKKK : " + rl.getGameRoomList().get(i).getRoomID());
-//                                System.out.println();
-//                            }
-//
-//                            Vector<GameRoom> l = rl.getGameRoomList();
-//                            SceneController sc = new SceneController();
-//                            sc.updateLobby(l);
-//
-//                        }
 
                         Platform.runLater(() -> {
                             // Display to the text area
@@ -198,8 +185,9 @@ public class Main extends Application {
                                         }
 
                                         Vector<GameRoom> l = rl.getGameRoomList();
-                                        LobbyController lobbyCont = new LobbyController();
-                                        lobbyCont.updateLobby(l,stage);
+                                        LobbyController lc = new LobbyController();
+                                        //lobbyCont.updateLobby(l,stage);
+                                        lc.updateLobby(l);
                                         break;
 
                                     case "ROOM_ADDED":
@@ -207,8 +195,8 @@ public class Main extends Application {
                                         System.out.println("ROOM LIST SIZE : " + roomList.size());
 
                                         Vector<GameRoom> list = roomList.getGameRoomList();
-                                        LobbyController lc = new LobbyController();
-                                        lc.updateLobby(list, stage);
+                                        LobbyController roomAdded = new LobbyController();
+                                        //lc.updateLobby(list, stage);
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");

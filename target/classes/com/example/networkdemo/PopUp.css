@@ -1,0 +1,21 @@
+root {
+    display: block;
+}
+.root {
+/*    -fx-pref-width: 1000px;
+    -fx-pref-height: 500px;
+    -fx-background-image: url(../images/woodTexture1.jpg);
+        -fx-border-color: #ff8000;
+        -fx-border-width: 3 2 2 2;
+*//*        -fx-background-size: 100% 100%;*/
+}
+/*.vbox {
+    -fx-background-image: url(../images/scoreBoard.png);
+    -fx-background-size: 90% 20%;
+    -fx-background-position: 0% 5%;
+    -fx-background-repeat: stretch;
+}*/
+
+#greeting-text {
+    -fx-font-size: 84px;
+}
