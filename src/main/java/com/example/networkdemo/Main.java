@@ -198,8 +198,8 @@ public class Main extends Application {
                                         }
 
                                         Vector<GameRoom> l = rl.getGameRoomList();
-                                        SceneController sc = new SceneController();
-                                        sc.updateLobby(l);
+                                        LobbyController lobbyCont = new LobbyController();
+                                        lobbyCont.updateLobby(stage,l);
                                         break;
 
                                     case "ROOM_ADDED":
@@ -207,7 +207,8 @@ public class Main extends Application {
                                         System.out.println("ROOM LIST SIZE : " + roomList.size());
 
                                         Vector<GameRoom> list = roomList.getGameRoomList();
-                                        editor.updateLobby(list);
+                                        LobbyController lc = new LobbyController();
+                                        lc.updateLobby(stage, list);
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");
@@ -226,9 +227,6 @@ public class Main extends Application {
                 }
             }
         }).start();
-
-
-
 
     }
 
