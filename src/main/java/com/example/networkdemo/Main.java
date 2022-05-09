@@ -111,6 +111,10 @@ public class Main extends Application {
 
                             try {
                                 switch (type) {
+
+                                    case "JOIN_LOBBY":
+                                        editor.switchToLobby(stage);
+                                        break;
                                     case "MULTIGAME_CREATED":
                                         //token = (char)message.getData();
                                         //System.out.println(token);
@@ -188,6 +192,7 @@ public class Main extends Application {
                                         LobbyController lc = new LobbyController();
                                         //lobbyCont.updateLobby(l,stage);
                                         lc.updateLobby(l);
+                                        //editor.switchToLobby(stage);
                                         break;
 
                                     case "ROOM_ADDED":
@@ -196,7 +201,8 @@ public class Main extends Application {
 
                                         Vector<GameRoom> list = roomList.getGameRoomList();
                                         LobbyController roomAdded = new LobbyController();
-                                        //lc.updateLobby(list, stage);
+                                        roomAdded.updateLobby(list);
+                                        editor.switchToLobby(stage);
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");

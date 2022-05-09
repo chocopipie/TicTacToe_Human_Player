@@ -1,6 +1,7 @@
 package com.example.networkdemo;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -79,7 +80,6 @@ public class SceneController extends TicTacToe {
         message = new Message("Multi", HumanTypes.CREATE_MULTIGAME);
         sendMessage();
 
-        switchToLobby(event);
     }
 
     public void RequestSoloGame(ActionEvent event) throws IOException {
@@ -134,37 +134,29 @@ public class SceneController extends TicTacToe {
         }
     }
 
-    public void switchToLobby(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
-        //System.out.println("Root changed to: " + root);
-        Stage stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-        Scene scene = new Scene(root);
-        stage.setScene(scene); //NULL
-        stage.show();
 
-
-
-        LobbyController lc = new LobbyController();
-        gameRooms = lc.getRooms();
-        ObservableList<String> items = FXCollections.observableArrayList (gameRooms);
-        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
-
-//        for(int i = 0; i < items.size(); i++){
-//            System.o
-//            ut.println(items.get(i));
-//        }
-
-//        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
-
-//        ObservableList<String> items = FXCollections.observableArrayList ("HI", "Bye");
-//
-//        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
-
+    public void RequestLobby(ActionEvent event) throws IOException{
+// later on, username will be the name that user entered
+        System.out.println(" permission to enter lobby");
+        message = new Message(userName, HumanTypes.LOBBY);
+        sendMessage();
     }
 
-    public static void setObservableList(Vector<String> list ){
-        items = FXCollections.observableArrayList (gameRooms);
 
+    public void switchToLobby(Stage s) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("lobby.fxml")));
+        //System.out.println("Root changed to: " + root);
+        s.getScene().getWindow();
+        Scene scene = new Scene(root);
+        s.setScene(scene); //NULL
+        s.show();
+
+        ObservableList<String> items = FXCollections.observableArrayList (gameRooms);
+        ((ListView<String>)(root.lookup("#myListView"))).setItems(items);
+    }
+
+    public static void setGameChannels(Vector<String> rooms){
+        gameRooms = rooms;
     }
 
 

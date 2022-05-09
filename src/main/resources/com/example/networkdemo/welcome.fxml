@@ -19,7 +19,7 @@
         <Text id="title-text" layoutX="460" layoutY="170" rotate="8" text="Toe" />
         <Text id="copy-right-text" text="© Team Comdesron" />
         <Button layoutX="420.0" layoutY="250.0" mnemonicParsing="false" onAction="#RequestJoinRoom" styleClass="single-player-button" text="Singleplayer" />
-        <Button layoutX="250.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToLobby" styleClass="multi-player-button" text="Multiplayer" />
+        <Button layoutX="250.0" layoutY="250.0" mnemonicParsing="false" onAction="#RequestLobby" styleClass="multi-player-button" text="Multiplayer" />
     </children>
 
     <stylesheets>

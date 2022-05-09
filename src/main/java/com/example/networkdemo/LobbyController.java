@@ -27,11 +27,8 @@ public class LobbyController extends SceneController {
     ListView myListView;
 
     private static Vector<String> updatedRooms = new Vector<String>();
-    ObservableList<String> items = FXCollections.observableArrayList ();
-
 
     public void updateLobby(Vector<GameRoom> list) {
-
         updatedRooms.clear();
         String temp;
 
@@ -49,35 +46,27 @@ public class LobbyController extends SceneController {
             updatedRooms.add(temp);
         }
 
-        //set list to observable list
-//        SceneController.items = FXCollections.observableArrayList (updatedRooms); DID NOT WORK
+        SceneController.setGameChannels(updatedRooms);
+
+    }
+
+
+
+//    public Vector<String> getRooms(){
 //
-     //   SceneController.setObservableList(updatedRooms); DID NOT WORK
-
-        System.out.println("TESTNIG OBSERVABLE LIST\n");
-        for(int i = 0; i < items.size(); i++){
-            System.out.println(items.get(i));
-            System.out.println();
-        }
-        System.out.println("END\n");
-
-    }
-
-    public Vector<String> getRooms(){
-
-        System.out.println("RETURNING OBSERVABLE LIST\n");
-        for(int i = 0; i < items.size(); i++){
-            System.out.println(items.get(i));
-            System.out.println();
-        }
-
-        System.out.println("ending retrun\n");
-
-        return updatedRooms;
-
-
-
-    }
+//        System.out.println("RETURNING OBSERVABLE LIST\n");
+//        for(int i = 0; i < items.size(); i++){
+//            System.out.println(items.get(i));
+//            System.out.println();
+//        }
+//
+//        System.out.println("ending retrun\n");
+//
+//        return updatedRooms;
+//
+//
+//
+//    }
 
 }
 
