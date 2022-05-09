@@ -293,8 +293,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Vector;
 
-import static com.example.networkdemo.Main.toServer;
-import static com.example.networkdemo.Main.token;
+import static com.example.networkdemo.Main.*;
 
 
 public class SceneController extends TicTacToe {
@@ -385,10 +384,8 @@ public class SceneController extends TicTacToe {
 
     public void RequestMultiGame(ActionEvent event) throws IOException {
         // later on, username will be the name that user entered
-        // for now, this is hardcoded
-        String username = "VANN";
         System.out.println("multi pressed");
-        message = new Message(username, HumanTypes.SEND_NAME);
+        message = new Message(userName, HumanTypes.SEND_NAME);
         sendMessage();
         message = new Message("Multi", HumanTypes.CREATE_MULTIGAME);
         sendMessage();

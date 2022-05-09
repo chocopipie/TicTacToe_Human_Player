@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+import javafx.stage.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -39,9 +39,40 @@ public class Main extends Application {
         scene.setFill(Color.BLUE);
         stage.show();
 
+        launchPopUp(stage);
+
+        System.out.println("Username: " + userName);
+
         //then, connect to server
         connectToServer(stage);
     }
+
+    private void launchPopUp(Stage stage) throws IOException {
+
+        // Create a new stage for pop up window
+        Stage popUpStage = new Stage();
+
+        // Load pop up fxml
+        Parent popUpRoot = FXMLLoader.load(getClass().getResource("/com/example/networkdemo/NameFieldPopUp.fxml"));
+
+        // Set pop up scene
+        popUpStage.setScene(new Scene(popUpRoot));
+
+        // Removes minimize, maximize and close buttons
+        // To add close button but not minimize or maximize buttons use StageStyle.Utility
+        popUpStage.initStyle(StageStyle.UNDECORATED);
+
+        // Causes popUpStage to become pop up
+        popUpStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Bind popUpStage to its initial owner
+        popUpStage.initOwner(stage);
+
+        // Wait for pop up to close before returning to Welcome Screen
+        popUpStage.showAndWait();
+
+    }
+
 
     private void connectToServer(Stage stage) throws IOException {
 
