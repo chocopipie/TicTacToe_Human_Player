@@ -88,16 +88,28 @@ public class SceneController extends TicTacToe {
         System.out.println("solo pressed");
     }
 
-    public void RequestJoinRoom(MouseEvent event) throws IOException{
-        System.out.println("Join pressed");
-        message = new Message(userName, HumanTypes.SEND_NAME);
-        sendMessage();
+//    public void RequestJoinRoom(MouseEvent event) throws IOException{
+//        System.out.println("Join pressed");
+//        message = new Message(userName, HumanTypes.SEND_NAME);
+//        sendMessage();
+//        // edit - later on will send player's id
+//        message = new Message("F5gBzVr", HumanTypes.JOIN_GAME);
+//
+//        sendMessage();
+//    }
+public void RequestJoinRoom(MouseEvent event) throws IOException{
+    System.out.println("Join pressed");
+    message = new Message(userName, HumanTypes.SEND_NAME);
+    sendMessage();
+    // i added those 2 lines -----------------------------
+    String roomInfo = ((ListView<String>)(root.lookup("#myListView"))).getSelectionModel().getSelectedItem();
+    String room_id = roomInfo.split(":")[0];
+    // ---------------------------------------------------------
+    message = new Message(room_id, HumanTypes.JOIN_GAME);
+    sendMessage();
+}
 
-        // edit - later on will send player's id
-        message = new Message("DMZ6opT", HumanTypes.JOIN_GAME);
 
-        sendMessage();
-    }
 
 
     @FXML

@@ -39,18 +39,19 @@ public class LobbyController extends SceneController {
         for (int i = 0; i < list.size(); i++) {
             String p1 = list.get(i).getPlayer1().getUserName();
             String p2 = list.get(i).getPlayer2().getUserName();
+            String room_id = list.get(i).getPlayer1().getRoom_id();
 
             if(p2 == ""){
-                temp = p1 + " vs. (OPEN GAME)";
+                temp = room_id + ": " + p1 + " vs. (OPEN GAME)";
             }
             else{
-                temp = p1 + " vs. " + p2;
+                temp = room_id + ": " + p1 + " vs. " + p2;
             }
             updatedRooms.add(temp);
         }
 
+        //setting list in SceneController
         SceneController.setGameChannels(updatedRooms);
-
     }
 
 
