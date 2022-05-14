@@ -118,6 +118,17 @@ public class Main extends Application {
                                         if (userName.equals(clientName))
                                             editor.switchToLobby(stage);
                                         break;
+                                    case "SOLOGAME_CREATED" :
+                                        GameRoom aiRoom = (GameRoom) message.getData();
+                                        HumanPlayer aiPlayer = aiRoom.getPlayer1();
+                                        if (aiPlayer.getUserName().equals(userName)) {
+                                            room_id = aiPlayer.getRoom_id();
+                                            token = aiPlayer.getToken();
+                                            System.out.println(token);
+                                            System.out.println(room_id);
+                                            SceneController.switchToTicTacToeSingleplayer(stage);
+                                        }
+                                        break;
                                     case "MULTIGAME_CREATED":
                                         //token = (char)message.getData();
                                         //System.out.println(token);

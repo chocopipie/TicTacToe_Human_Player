@@ -58,12 +58,12 @@ public class SceneController extends TicTacToe {
 
     }
 
-    public void switchToTicTacToeSingleplayer(ActionEvent event) throws IOException {
-//        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("tic-tac-toe-singleplayer.fxml")));
-////        stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
-////        scene = new Scene(root);
-////        stage.setScene(scene);
-
+    public static void switchToTicTacToeSingleplayer(Stage stage) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(SceneController.class.getResource("tic-tac-toe-singleplayer.fxml")));
+        //stage = (Stage)(((Node)event.getSource()).getScene().getWindow());
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     //will return message
@@ -84,8 +84,11 @@ public class SceneController extends TicTacToe {
     }
 
     public void RequestSoloGame(ActionEvent event) throws IOException {
-//        Object message = new Message("single", HumanTypes.CREATE_SOLOGAME);
         System.out.println("solo pressed");
+        message = new Message(userName, HumanTypes.SEND_NAME);
+        sendMessage();
+        message = new Message("solo", HumanTypes.CREATE_SOLOGAME);
+        sendMessage();
     }
 
 //    public void RequestJoinRoom(MouseEvent event) throws IOException{
@@ -97,6 +100,8 @@ public class SceneController extends TicTacToe {
 //
 //        sendMessage();
 //    }
+
+
 public void RequestJoinRoom(MouseEvent event) throws IOException{
     System.out.println("Join pressed");
     message = new Message(userName, HumanTypes.SEND_NAME);
