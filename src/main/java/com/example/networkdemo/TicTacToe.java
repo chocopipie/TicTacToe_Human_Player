@@ -83,5 +83,11 @@ public class TicTacToe {
 
     }
 
+    public void requestRematch (ActionEvent event) throws IOException {
+        Object message = new Message(true, HumanTypes.REMATCH_REQUEST);
+        toServer.reset();
+        Main.toServer.writeObject(message);
+    }
+
 
 }

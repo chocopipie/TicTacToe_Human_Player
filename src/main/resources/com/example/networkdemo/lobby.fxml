@@ -3,19 +3,31 @@
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.text.Text?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.networkdemo.LobbyController">
-   <children>
-      <Button layoutX="440.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToWelcome" prefHeight="35.0" prefWidth="126.0" text="Main" />
-      <Button layoutX="300.0" layoutY="345.0" mnemonicParsing="false" onAction="#RequestMultiGame" prefHeight="35.0" prefWidth="126.0" text="Create Game" />
-      <ListView fx:id="myListView" layoutX="40.0" layoutY="83.0" onMouseClicked="#RequestJoinRoom" prefHeight="254.0" prefWidth="520.0" editable="true"/>
-      <Label layoutX="40.0" layoutY="65.0" prefHeight="17.0" prefWidth="520.0" text="Game Rooms                                                                          View Game" />
+<?import javafx.geometry.Insets?>
 
-   </children>
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.networkdemo.LobbyController">
+   <padding>
+      <Insets bottom="20" left="100" right="100" top="40" />
+   </padding>
+   <top>
+      <Label id="header" text="Game Rooms                                                                          View Game" />
+   </top>
+   <center>
+      <ListView fx:id="myListView" onMouseClicked="#RequestJoinRoom" editable="true"/>
+   </center>
+   <bottom>
+      <HBox alignment="BASELINE_RIGHT">
+         <padding>
+            <Insets bottom="5" left="5" right="5" top="5" />
+         </padding>
+         <Button mnemonicParsing="false" onAction="#RequestMultiGame" text="Create Game" />
+         <Button mnemonicParsing="false" onAction="#switchToWelcome" text="Main Menu" />
+      </HBox>
+   </bottom>
 
    <stylesheets>
       <URL value="@lobbyStyle.css" />
    </stylesheets>
 
-</AnchorPane>
+</BorderPane>

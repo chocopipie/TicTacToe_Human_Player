@@ -39,7 +39,7 @@ public class Main extends Application {
         scene.setFill(Color.BLUE);
         stage.show();
 
-        launchPopUp(stage);
+        launchPopUp (stage, "NameFieldPopUp", true);
 
         System.out.println("Username: " + userName);
 
@@ -47,13 +47,13 @@ public class Main extends Application {
         connectToServer(stage);
     }
 
-    private void launchPopUp(Stage stage) throws IOException {
+    private void launchPopUp (Stage stage, String popUpName, boolean showAndWait) throws IOException {
 
         // Create a new stage for pop up window
         Stage popUpStage = new Stage();
 
         // Load pop up fxml
-        Parent popUpRoot = FXMLLoader.load(getClass().getResource("/com/example/networkdemo/NameFieldPopUp.fxml"));
+        Parent popUpRoot = FXMLLoader.load(getClass().getResource("/com/example/networkdemo/" + popUpName +".fxml"));
 
         // Set pop up scene
         popUpStage.setScene(new Scene(popUpRoot));
@@ -69,10 +69,13 @@ public class Main extends Application {
         popUpStage.initOwner(stage);
 
         // Wait for pop up to close before returning to Welcome Screen
-        popUpStage.showAndWait();
+        if (showAndWait == true) {
+            popUpStage.showAndWait();
+        }
+        else
+            popUpStage.show();
 
     }
-
 
     private void connectToServer(Stage stage) throws IOException {
 
@@ -176,13 +179,13 @@ public class Main extends Application {
                                         Move moveWithWinner = (Move) message.getData();
                                         if (room_id.equals(moveWithWinner.getRoom_id())) {
                                             editor.updateScoreboard(moveWithWinner.getToken());
-                                            editor.resetBoard();
+                                            //editor.resetBoard();
                                         }
                                         break;
                                     case "TIE":
                                         String currentRoomID = (String) message.getData();
                                         if (room_id.equals(currentRoomID))
-                                            editor.resetBoard();
+                                            //editor.resetBoard();
                                         break;
                                     case "SEND_GAMECHANNEL":
                                         RoomList rl = (RoomList) message.getData();
@@ -206,6 +209,9 @@ public class Main extends Application {
                                         LobbyController roomAdded = new LobbyController();
                                         roomAdded.updateLobby(list);
                                         //editor.switchToLobby(stage);
+                                        break;
+                                    case "REMATCH_REQUEST":
+                                        //launchPopUp (stage, "rematchPopUp", false);
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");

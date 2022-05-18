@@ -7,8 +7,8 @@ root {
 * define default values for font-size, font-family etc. to provide
 * consistency in the UI.*/
 .root {
-    -fx-pref-width: 800px;
-    -fx-pref-height: 400px;
+    -fx-pref-width: 960px;
+    -fx-pref-height: 480px;
     -fx-background-image: url(../../../images/woodTexture.jpg);
         -fx-border-color: #ff8000;
         -fx-border-width: 3 2 2 2;
@@ -22,8 +22,8 @@ root {
 }*/
 /*Sets location and size of class. Also sets background and background size*/
 .banner {
-    -fx-translate-x: 100;
-    -fx-translate-y: 80;
+    -fx-translate-x: 200;
+    -fx-translate-y: 130;
     -fx-pref-width: 600;
     -fx-pref-height: 200;
     -fx-background-image: url(../../../images/banner.png);
@@ -37,8 +37,8 @@ root {
 }
 /*Sets location and width of a text box. Also sets text font, text size and text color*/
 #copy-right-text {
-    -fx-translate-x: 325;
-    -fx-translate-y: 350;
+    -fx-translate-x: 415;
+    -fx-translate-y: 400;
     -fx-pref-width: 150;
     -fx-font-size: 16px;
     -fx-fill: white;

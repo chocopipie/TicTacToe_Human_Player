@@ -90,4 +90,3 @@ public class LobbyController extends SceneController {
 //    }
 
 }
-

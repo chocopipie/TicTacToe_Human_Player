@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import java.net.URL?>
+<BorderPane prefHeight="100.0" prefWidth="280" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.networkdemo.RematchPopUp">
+    <padding>
+        <Insets bottom="5" left="5" right="5" top="5" />
+    </padding>
+    <top>
+        <Text fx:id="prompt" styleClass="prompt-text" text="Your Opponent Wants a Rematch!" style="-fx-fill: white; -fx-font-size: 18;" textAlignment="CENTER" wrappingWidth="280" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <HBox alignment="CENTER" style="-fx-spacing: 20;">
+            <Button fx:id="acceptButton" defaultButton="true" mnemonicParsing="false" onAction="#sendUserChoice" style="-fx-font-size: 14px" text="Accept" BorderPane.alignment="CENTER"/>
+            <Button fx:id="rejectButton" mnemonicParsing="false" onAction="#sendUserChoice" style="-fx-font-size: 14;" text="Reject" BorderPane.alignment="CENTER" />
+        </HBox>
+    </center>
+
+    <stylesheets>
+        <URL value="@PopUp.css" />
+    </stylesheets>
+
+</BorderPane>

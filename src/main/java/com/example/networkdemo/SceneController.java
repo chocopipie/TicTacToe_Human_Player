@@ -56,6 +56,8 @@ public class SceneController extends TicTacToe {
         stage.setScene(scene);
         stage.show();
 
+        // Hide rematchButton when entering scene
+        root.lookup("#rematchButton").setVisible(false);
     }
 
     public void switchToTicTacToeSingleplayer(ActionEvent event) throws IOException {
@@ -115,6 +117,9 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
     @FXML
     GridPane board00;
 
+    @FXML
+    Button rematchButton;
+
 //    @FXML
 //    Button button01;
 
@@ -146,6 +151,17 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
 
             ((Label)(root.lookup("#playerOScore"))).setText(String.valueOf(tempScore));
         }
+
+        ((Label)(root.lookup("#playerlabel"))).setText("Player " + winner + " Wins Match");
+        root.lookup("#rematchButton").setVisible(true);
+
+/*        Button butt = null;
+        butt = (Button) root.lookup("#rematchButton");
+
+        if (butt != null)
+            butt.setVisible(true);
+        else
+            System.out.println("button was null");*/
     }
 
 
