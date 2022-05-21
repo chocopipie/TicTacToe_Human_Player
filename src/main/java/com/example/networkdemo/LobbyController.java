@@ -54,39 +54,4 @@ public class LobbyController extends SceneController {
         SceneController.setGameChannels(updatedRooms);
     }
 
-
-//    //will return message
-//    public static void sendMessage() throws IOException {
-//
-//        toServer.writeObject(message);
-//        toServer.reset();
-//    }
-//
-//    public void switchToBoard(ActionEvent event) throws IOException {
-//
-//        System.out.println("Join pressed");
-//        message = new Message(userName, HumanTypes.SEND_NAME);
-//        sendMessage();
-//        // edit - later on will send player's id
-//        message = new Message("xMrprz5", HumanTypes.JOIN_GAME);
-//
-//        sendMessage();
-//    }
-
-//    public Vector<String> getRooms(){
-//
-//        System.out.println("RETURNING OBSERVABLE LIST\n");
-//        for(int i = 0; i < items.size(); i++){
-//            System.out.println(items.get(i));
-//            System.out.println();
-//        }
-//
-//        System.out.println("ending retrun\n");
-//
-//        return updatedRooms;
-//
-//
-//
-//    }
-
 }

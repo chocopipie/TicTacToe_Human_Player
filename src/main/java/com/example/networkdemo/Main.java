@@ -27,6 +27,8 @@ public class Main extends Application {
     static ObjectInputStream fromServer = null;
     static ObjectOutputStream toServer = null;
 
+    static GameRoom currentGame;
+
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -67,6 +69,7 @@ public class Main extends Application {
 
         // Bind popUpStage to its initial owner
         popUpStage.initOwner(stage);
+        popUpStage.centerOnScreen();
 
         // Wait for pop up to close before returning to Welcome Screen
         if (showAndWait == true) {
@@ -122,9 +125,6 @@ public class Main extends Application {
                                             editor.switchToLobby(stage);
                                         break;
                                     case "MULTIGAME_CREATED":
-                                        //token = (char)message.getData();
-                                        //System.out.println(token);
-                                        // get room created, the token
                                         GameRoom playersRoom = (GameRoom) message.getData();
                                         HumanPlayer thisPlayer = playersRoom.getPlayer1();
                                         if (thisPlayer.getUserName().equals(userName)) {
@@ -134,6 +134,8 @@ public class Main extends Application {
                                             System.out.println(room_id);
                                             SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
+
+
                                         break;
                                     case "JOIN_SUCCESS":
                                         // get room created, the token
@@ -147,8 +149,11 @@ public class Main extends Application {
                                             room_id = thisPlayer2.getRoom_id();
                                             System.out.println(token);
                                             System.out.println(room_id);
+                                            currentGame = roomJoined;
                                             SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
+
+                                        currentGame = roomJoined;
                                         break;
                                     case "JOIN_FAIL":
                                         System.out.println(message.getData());
@@ -198,7 +203,8 @@ public class Main extends Application {
                                         LobbyController lc = new LobbyController();
                                         //lobbyCont.updateLobby(l,stage);
                                         lc.updateLobby(l);
-                                        //editor.switchToLobby(stage);
+                                        if(currentGame.getPlayer1().getUserName() ==" " && currentGame.getPlayer1().getUserName() ==" " )
+                                            editor.switchToLobby(stage);
                                         break;
 
                                     case "ROOM_ADDED":
@@ -209,9 +215,30 @@ public class Main extends Application {
                                         LobbyController roomAdded = new LobbyController();
                                         roomAdded.updateLobby(list);
                                         //editor.switchToLobby(stage);
+                                        if(currentGame.getPlayer1().getUserName() ==" " && currentGame.getPlayer1().getUserName() ==" " )
+                                            editor.switchToLobby(stage);
                                         break;
                                     case "REMATCH_REQUEST":
-                                        //launchPopUp (stage, "rematchPopUp", false);
+                                        String rematchReceiver = (String)message.getData();
+
+                                        if(userName.equals(rematchReceiver)){
+                                            launchPopUp(stage, "rematchPopUp", false);
+                                            System.out.println("This is i\n");
+                                        }
+                                        break;
+                                    case "REMATCH_ACCEPTED":
+                                        String game = (String) message.getData();
+                                        if(room_id.equals(game)){
+                                            //send gamecontroller signal to restart game logic
+
+                                            editor.resetBoard(); //clear board visually also
+                                        }
+                                        break;
+                                    case "REMATCH_REJECTED":
+                                        String s = (String) message.getData();
+                                        if(room_id.equals(s)){
+                                            editor.switchToLobby(stage);
+                                        }
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");

@@ -84,7 +84,15 @@ public class TicTacToe {
     }
 
     public void requestRematch (ActionEvent event) throws IOException {
-        Object message = new Message(true, HumanTypes.REMATCH_REQUEST);
+        Object message;
+        if (userName.equals(currentGame.getPlayer1().getUserName())){
+            //if player is player1, send to player2
+            message = new Message(currentGame.getPlayer2().getUserName(), HumanTypes.REMATCH_REQUEST);
+        }
+        else{
+            //else send to player1
+            message = new Message(currentGame.getPlayer1().getUserName(), HumanTypes.REMATCH_REQUEST);
+        }
         toServer.reset();
         Main.toServer.writeObject(message);
     }

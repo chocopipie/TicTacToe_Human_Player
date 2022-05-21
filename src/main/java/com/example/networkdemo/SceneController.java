@@ -99,6 +99,7 @@ public class SceneController extends TicTacToe {
 //
 //        sendMessage();
 //    }
+
 public void RequestJoinRoom(MouseEvent event) throws IOException{
     System.out.println("Join pressed");
     message = new Message(userName, HumanTypes.SEND_NAME);

@@ -4,18 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="NullPointerException error, line 367">
+    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="version w/ proper strings for requestjoin method">
       <change beforePath="$PROJECT_DIR$/.idea/Human_Player.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Human_Player.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_18_0_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_17_0_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_17_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_17_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_18_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_18_0_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/LobbyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/RematchPopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/RematchPopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/RoomList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/RoomList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/LobbyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/LobbyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/PopUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/PopUp.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/TicTacToe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/TicTacToe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/boardStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/boardStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/lobby.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/lobby.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/lobbyStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/lobbyStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/tic-tac-toe-multiplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/tic-tac-toe-multiplayer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcomeTitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcomeTitle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652077713892</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="version w/ proper strings for requestjoin method">
+      <created>1652146171902</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652146171902</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +247,7 @@
     <MESSAGE value="works with current Server: serverMessages2&#10;&#10;will add switch" />
     <MESSAGE value="added lobby fxml, no functionality rn" />
     <MESSAGE value="NullPointerException error, line 367" />
-    <option name="LAST_COMMIT_MESSAGE" value="NullPointerException error, line 367" />
+    <MESSAGE value="version w/ proper strings for requestjoin method" />
+    <option name="LAST_COMMIT_MESSAGE" value="version w/ proper strings for requestjoin method" />
   </component>
 </project>

@@ -14,12 +14,12 @@
     <children>
         <Label styleClass="border" />
         <Label styleClass="banner" />
-        <Text id="title-text" layoutX="240" layoutY="170" rotate="-10" text="Tic" />
-        <Text id="title-text" layoutX="340" layoutY="160" rotate="0" text="Tac" />
-        <Text id="title-text" layoutX="460" layoutY="170" rotate="8" text="Toe" />
+        <Text id="title-text" layoutX="340" layoutY="220" rotate="-10" text="Tic" />
+        <Text id="title-text" layoutX="440" layoutY="210" rotate="0" text="Tac" />
+        <Text id="title-text" layoutX="560" layoutY="220" rotate="8" text="Toe" />
         <Text id="copy-right-text" text="© Team Comdesron" />
-        <Button layoutX="420.0" layoutY="250.0" mnemonicParsing="false" onAction="#RequestJoinRoom" styleClass="single-player-button" text="Singleplayer" />
-        <Button layoutX="250.0" layoutY="250.0" mnemonicParsing="false" onAction="#RequestLobby" styleClass="multi-player-button" text="Multiplayer" />
+        <Button layoutX="510.0" layoutY="300.0" mnemonicParsing="false" onAction="#RequestJoinRoom" styleClass="single-player-button" text="Singleplayer" />
+        <Button layoutX="340.0" layoutY="300.0" mnemonicParsing="false" onAction="#RequestLobby" styleClass="multi-player-button" text="Multiplayer" />
     </children>
 
     <stylesheets>

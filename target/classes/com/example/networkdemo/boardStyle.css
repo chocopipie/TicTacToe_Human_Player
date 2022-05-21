@@ -2,18 +2,38 @@ root {
     display: block;
 }
 .root {
-    -fx-pref-width: 800px;
-    -fx-pref-height: 400px;
+/*    -fx-pref-width: 960px;*/
+    -fx-pref-width: 960px;
+    -fx-pref-height: 480px;
     -fx-background-image: url(../../../images/woodTexture1.jpg);
-        -fx-border-color: #ff8000;
-        -fx-border-width: 3 2 2 2;
+    -fx-border-color: #ff8000;
+    -fx-border-width: 3 2 2 2;
+    -fx-fill-width: true;
+    -fx-fill-height: true;
+    /*In order top, right, bottom, and left*/
+    -fx-padding: 15px 30px 30px 15px;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+/*        -fx-background-size: 100% 100%;*/
 }
-.vbox {
-    -fx-background-image: url(../../../images/scoreBoard.png);
-    -fx-background-size: 90% 30%;
-    -fx-background-position: 0% 5%;
+/*.vbox {
+
+    -fx-background-size: 100% 20%;
+    -
+*//*    -fx-background-position: 0% 5%;*//*
     -fx-background-repeat: stretch;
+}*/
+
+#scoreboard {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 100px;
+    -fx-min-width: 200px;
+    -fx-max-height: 100px;
+    -fx-background-position: top;
+    -fx-background-image: url(../../../images/scoreBoard.png);
+    -fx-background-size: 100% 100%;
 }
+
 #scoreboard-text {
     -fx-font-family: 'Times New Roman';
     -fx-font-size: 19px;
@@ -21,6 +41,12 @@ root {
     -fx-font-weight: bold;
     -fx-alignment: center;
 }
+
+# welcome {
+    -fx-font-family: 'Times New Roman';
+    -fx-font-size: 84px;
+}
+
 .scoreboard-subtext {
     -fx-font-size: 17px;
     -fx-fill: white;
@@ -33,6 +59,12 @@ root {
     -fx-border-color: transparent;
     -fx-background-color: transparent;
 }
+
+#textArea {
+    -fx-background: red;
+
+}
+
 
 #button1, #button2, #button3,
 #button4, #button5, #button6,
@@ -48,6 +80,14 @@ root {
     -fx-font-weight: bold;
     -fx-font-size: 40px;
 }
+
+#paneForTextField {
+    -fx-border-color: green;
+    -fx-padding-insets: 5px 5px 5px 5px;
+    -fx-background-color: white;
+
+}
+
 /*When a button on the grid is pressed it highlights the cell*/
 /*#button1:pressed, #button2:pressed, #button3:pressed,
 #button4:pressed, #button5:pressed, #button6:pressed,
@@ -60,6 +100,12 @@ root {
     -fx-background-repeat: stretch;
         -fx-background-color: transparent;
 }*/
+
+/*Hides the rematch button. Set to visible to see button again*/
+/*#rematchButton {
+    visibility: hidden;
+}*/
+
 /*When hovering over a button with action, the button lights up blue*/
 .action-button {
     -fx-background-image: url(../../../images/buttonTexture.png);
@@ -68,6 +114,7 @@ root {
     -fx-background-color: transparent;
     -fx-font-size: 15px;
 }
+
 .action-button:hover {
     -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }
