@@ -4,26 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="NullPointerException error, line 367">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/AIPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Human_Player.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Human_Player.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_mac_18_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_mac_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_mac_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_mac_17_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="singleplayer not working fully yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/GameRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/GameRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/welcome.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/GameRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/GameRoom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/welcome.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652077713892</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="singleplayer not working fully yet">
+      <created>1652555811326</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652555811327</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +239,12 @@
     <MESSAGE value="works with current Server: serverMessages2&#10;&#10;will add switch" />
     <MESSAGE value="added lobby fxml, no functionality rn" />
     <MESSAGE value="NullPointerException error, line 367" />
-    <option name="LAST_COMMIT_MESSAGE" value="NullPointerException error, line 367" />
+    <MESSAGE value="singleplayer not working fully yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="singleplayer not working fully yet" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Human_Player$Main.ic" NAME="Main Coverage Results" MODIFIED="1653009764312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.networkdemo.*</FILTER>
+    </SUITE>
   </component>
 </project>

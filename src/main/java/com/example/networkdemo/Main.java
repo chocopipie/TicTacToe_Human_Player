@@ -120,10 +120,10 @@ public class Main extends Application {
                                         break;
                                     case "SOLOGAME_CREATED" :
                                         GameRoom aiRoom = (GameRoom) message.getData();
-                                        HumanPlayer aiPlayer = aiRoom.getPlayer1();
-                                        if (aiPlayer.getUserName().equals(userName)) {
-                                            room_id = aiPlayer.getRoom_id();
-                                            token = aiPlayer.getToken();
+                                        HumanPlayer soloPlayer = aiRoom.getPlayer1();
+                                        if (soloPlayer.getUserName().equals(userName)) {
+                                            room_id = soloPlayer.getRoom_id();
+                                            token = soloPlayer.getToken();
                                             System.out.println(token);
                                             System.out.println(room_id);
                                             SceneController.switchToTicTacToeSingleplayer(stage);

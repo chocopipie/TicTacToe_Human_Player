@@ -115,7 +115,11 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
 }
 
 
+    public void playWithComputer(ActionEvent event) throws IOException {
+        // later on, username will be the name that user entered
 
+
+    }
 
     @FXML
     GridPane board00;
@@ -155,7 +159,7 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
 
 
     public void RequestLobby(ActionEvent event) throws IOException{
-// later on, username will be the name that user entered
+        // later on, username will be the name that user entered
         System.out.println(" permission to enter lobby");
         message = new Message(userName, HumanTypes.LOBBY);
         sendMessage();
