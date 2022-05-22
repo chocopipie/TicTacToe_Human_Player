@@ -32,6 +32,7 @@ public class NameFieldPopUpController {
 
             stage = (Stage) submitButton.getScene().getWindow();
             userName = ((TextField)(stage.getScene().lookup("#nameField"))).getText().trim();
+            stage.setAlwaysOnTop(false);
             stage.close();
         }
 

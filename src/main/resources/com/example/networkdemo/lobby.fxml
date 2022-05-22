@@ -21,8 +21,9 @@
          <padding>
             <Insets bottom="5" left="5" right="5" top="5" />
          </padding>
-         <Button mnemonicParsing="false" onAction="#RequestMultiGame" text="Create Game" />
-         <Button mnemonicParsing="false" onAction="#switchToWelcome" text="Main Menu" />
+         <Button prefWidth="150" mnemonicParsing="false" onAction="#RequestMultiGame" text="Create Game" />
+         <Button prefWidth="150" mnemonicParsing="false" onAction="#switchToWelcome" text="Main Menu" />
+<!--         <Button prefWidth="150" mnemonicParsing="false" onAction="#refreshLobby" text="Refresh" />-->
       </HBox>
    </bottom>
 

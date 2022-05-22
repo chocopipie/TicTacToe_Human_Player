@@ -2,6 +2,7 @@ package com.example.networkdemo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -23,7 +24,7 @@ public class RematchPopUp {
     public void sendUserChoice (ActionEvent event) throws IOException {
 
         // Create a new stage for pop up window
-        Stage stage = (Stage) event.getSource();
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
 
         // Load pop up fxml
         Parent root;

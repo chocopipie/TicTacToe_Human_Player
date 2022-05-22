@@ -11,7 +11,7 @@ root {
     -fx-fill-width: true;
     -fx-fill-height: true;
     /*In order top, right, bottom, and left*/
-    -fx-padding: 15px 30px 30px 15px;
+    -fx-padding: 15px 20px 30px 15px;
     -fx-spacing: 10;
     -fx-alignment: center;
 /*        -fx-background-size: 100% 100%;*/

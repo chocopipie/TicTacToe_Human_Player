@@ -132,7 +132,7 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
         }
         else {
             //int playerOScoreUpdated = Integer.parseInt(playerXScore.getText()) + 1;
-            ((Label)(root.lookup("#playerlabel"))).setText("Opponenets's Turn");
+            ((Label)(root.lookup("#playerlabel"))).setText("Opponent's Turn");
         }
     }
 

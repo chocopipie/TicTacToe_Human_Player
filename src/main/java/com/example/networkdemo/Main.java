@@ -40,6 +40,7 @@ public class Main extends Application {
         stage.show();
 
         launchPopUp (stage, "NameFieldPopUp", true);
+        //launchPopUp (stage, "rematchPopUp", true);
 
         System.out.println("Username: " + userName);
 
@@ -67,6 +68,19 @@ public class Main extends Application {
 
         // Bind popUpStage to its initial owner
         popUpStage.initOwner(stage);
+
+        popUpStage.setAlwaysOnTop(true);
+        //popUpStage.centerOnScreen();
+/*        // The stage is 960x480. So popup spawns in the middle of where
+        // ever its located
+        popUpStage.setX(stage.getX()+480);
+        popUpStage.setY(stage.getY()+240);*/
+
+
+
+        popUpStage.showAndWait();
+
+
 
         // Wait for pop up to close before returning to Welcome Screen
         if (showAndWait == true) {
@@ -116,10 +130,11 @@ public class Main extends Application {
                                 switch (type) {
 
                                     case "JOIN_LOBBY":
-                                        String clientName = (String) message.getData();
-                                        System.out.println(clientName);
-                                        if (userName.equals(clientName))
-                                            editor.switchToLobby(stage);
+//                                        String clientName = (String) message.getData();
+//                                        System.out.println(clientName);
+//                                        if (userName.equals(clientName))
+//                                            editor.switchToLobby(stage);
+                                        launchPopUp (stage, "rematchPopUp", true);
                                         break;
                                     case "MULTIGAME_CREATED":
                                         //token = (char)message.getData();
