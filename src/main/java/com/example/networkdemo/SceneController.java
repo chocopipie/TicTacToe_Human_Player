@@ -9,9 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -309,6 +307,36 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
     }
 
     public void Restart(ActionEvent event) {
+
+    }
+
+    @FXML
+    private TextField tf;
+
+    public void sendMessage(ActionEvent actionEvent) throws IOException {
+
+        //get String from textfield
+        String textMsg = ((TextField) root.lookup("#textField")).getText().trim();
+        System.out.println(textMsg);
+
+        //create text message class, to send both roomID and the text
+        TextMessage tm = new TextMessage(currentGame.getRoomID(), textMsg, userName);
+
+        //send message
+        message = new Message(tm, HumanTypes.SEND_MESSAGE);
+        sendMessage();
+
+    }
+
+    public void appendMessage(TextMessage tm) {
+        String sender = tm.getSender();
+        String text = tm.getText();
+
+        String toDisplay = sender + ": " + text + "\n";
+
+        //display to textArea
+        ((TextArea) root.lookup("#textArea")).appendText(toDisplay);
+
 
     }
 }

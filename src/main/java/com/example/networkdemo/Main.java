@@ -148,16 +148,12 @@ public class Main extends Application {
                                             System.out.println(room_id);
                                             SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
-
-
                                         break;
                                     case "JOIN_SUCCESS":
                                         // get room created, the token
                                         GameRoom roomJoined = (GameRoom) message.getData();
                                         HumanPlayer thisPlayer2 = roomJoined.getPlayer2();
-//                                        System.out.println("Room id: " + roomJoined.getRoomID());
-//                                        System.out.println("Player 1: " + roomJoined.getPlayer1().getUserName());
-//                                        System.out.println("Player 2: " + roomJoined.getPlayer2().getUserName());
+//
                                         if (thisPlayer2.getUserName().equals(userName)) {
                                             token = thisPlayer2.getToken();
                                             room_id = thisPlayer2.getRoom_id();
@@ -249,6 +245,17 @@ public class Main extends Application {
                                         String s = (String) message.getData();
                                         if(room_id.equals(s)){
                                             editor.switchToLobby(stage);
+                                        }
+                                        break;
+                                    case "SEND_MESSAGE":
+                                        TextMessage tm = (TextMessage)message.getData();
+                                        String roomID = tm.getRoomID();
+
+
+                                        //if it is the current game room, then append text to text area
+                                        if(currentGame.getRoomID().equals(roomID)){
+                                            editor.appendMessage(tm);
+                                            System.out.println("Received message");
                                         }
                                         break;
                                     default:

@@ -83,7 +83,7 @@
                         <TextField fx:id="textField" text="(Enter Message)" BorderPane.alignment="CENTER" />
                     </center>
                     <right>
-                        <Button fx:id="sendButton" mnemonicParsing="false" text="Send" BorderPane.alignment="CENTER" />
+                        <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendMessage" styleClass="action-button" text="Send" BorderPane.alignment="CENTER" />
                     </right>
                 </BorderPane>
             </bottom>
