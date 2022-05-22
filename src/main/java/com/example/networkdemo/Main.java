@@ -21,7 +21,7 @@ import java.util.Vector;
 public class Main extends Application {
 
     static char token;  // token of this client
-    static String room_id = "";  // room id of this client
+    static String room_id = " ";  // room id of this client
     static char currentToken = 'X';
     static String userName = "VANN";
     static ObjectInputStream fromServer = null;

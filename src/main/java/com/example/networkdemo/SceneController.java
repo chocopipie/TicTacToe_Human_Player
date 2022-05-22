@@ -67,6 +67,8 @@ public class SceneController extends TicTacToe {
         stage.setScene(scene);
         stage.show();
 
+        root.lookup("#rematchButton").setVisible(false);
+
     }
 
     //will return message
@@ -306,4 +308,7 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
 
     }
 
+    public void Restart(ActionEvent event) {
+
+    }
 }

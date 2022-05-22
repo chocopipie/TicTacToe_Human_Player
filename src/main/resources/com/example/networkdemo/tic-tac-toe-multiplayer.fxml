@@ -9,11 +9,14 @@
 <HBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.networkdemo.SceneController">
     <VBox alignment="TOP_CENTER">
         <BorderPane id="scoreboard" styleClass="borderPane">
+            <padding>
+                <Insets bottom="5" left="5" top="5" />
+            </padding>
             <top>
                 <Text id="scoreboard-text" text="Scoreboard" />
             </top>
             <center>
-                <HBox>
+                <HBox alignment="CENTER_LEFT">
                     <children>
                         <Label prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="Player X" textFill="white" />
                         <Label fx:id="playerXScore" styleClass="scoreboard-subtext" text="0" textFill="white" />
@@ -23,7 +26,7 @@
             <bottom>
                 <HBox>
                     <children>
-                        <Label prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="Player O" textFill="white" />
+                        <Label fx:id="player2" prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="Player O" textFill="white" />
                         <Label fx:id="playerOScore" styleClass="scoreboard-subtext" text="0" textFill="white" />
                     </children>
                 </HBox>
@@ -62,10 +65,10 @@
         </GridPane>
     </VBox>
 
-    <VBox prefWidth="300">
+    <VBox prefWidth="300" style="-fx-spacing: 150">
         <BorderPane styleClass="mainPane">
             <padding>
-                <Insets bottom="5" left="5" right="5" top="5" />
+                <Insets bottom="5" left="5" top="5" />
             </padding>
             <center>
                 <ScrollPane BorderPane.alignment="CENTER">

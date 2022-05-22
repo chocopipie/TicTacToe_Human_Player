@@ -22,7 +22,7 @@ root {
 }*/
 /*Sets location and size of class. Also sets background and background size*/
 .banner {
-    -fx-translate-x: 200;
+    -fx-translate-x: 190;
     -fx-translate-y: 130;
     -fx-pref-width: 600;
     -fx-pref-height: 200;
