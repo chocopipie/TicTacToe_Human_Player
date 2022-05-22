@@ -23,6 +23,7 @@
          </padding>
          <Button mnemonicParsing="false" onAction="#RequestMultiGame" text="Create Game" />
          <Button mnemonicParsing="false" onAction="#switchToWelcome" text="Main Menu" />
+         <Button mnemonicParsing="false" onAction="#refreshLobby" text="refresh" />
       </HBox>
    </bottom>
 

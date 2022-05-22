@@ -120,6 +120,9 @@ public class Main extends Application {
 
                                     case "JOIN_LOBBY":
                                         String clientName = (String) message.getData();
+                                        System.out.println("clientName:" + clientName);
+                                        System.out.println();
+
                                         System.out.println(clientName);
                                         if (userName.equals(clientName))
                                             editor.switchToLobby(stage);
@@ -149,10 +152,9 @@ public class Main extends Application {
                                             room_id = thisPlayer2.getRoom_id();
                                             System.out.println(token);
                                             System.out.println(room_id);
-                                            currentGame = roomJoined;
+//                                            currentGame = roomJoined;
                                             SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
-
                                         currentGame = roomJoined;
                                         break;
                                     case "JOIN_FAIL":
@@ -203,8 +205,8 @@ public class Main extends Application {
                                         LobbyController lc = new LobbyController();
                                         //lobbyCont.updateLobby(l,stage);
                                         lc.updateLobby(l);
-                                        if(currentGame.getPlayer1().getUserName() ==" " && currentGame.getPlayer1().getUserName() ==" " )
-                                            editor.switchToLobby(stage);
+//                                        if(currentGame.getPlayer1().getUserName() ==" " && currentGame.getPlayer1().getUserName() ==" " )
+//                                            editor.switchToLobby(stage);
                                         break;
 
                                     case "ROOM_ADDED":
@@ -229,8 +231,6 @@ public class Main extends Application {
                                     case "REMATCH_ACCEPTED":
                                         String game = (String) message.getData();
                                         if(room_id.equals(game)){
-                                            //send gamecontroller signal to restart game logic
-
                                             editor.resetBoard(); //clear board visually also
                                         }
                                         break;

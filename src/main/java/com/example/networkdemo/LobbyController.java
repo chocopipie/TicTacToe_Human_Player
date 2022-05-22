@@ -54,4 +54,13 @@ public class LobbyController extends SceneController {
         SceneController.setGameChannels(updatedRooms);
     }
 
+    public void refreshLobby(ActionEvent actionEvent) throws IOException {
+        //get stage
+        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+
+
+        SceneController sc = new SceneController();
+        sc.switchToLobby(stage);
+
+    }
 }
