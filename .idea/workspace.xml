@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="added send message humantype">
+    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanTypes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/HumanTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/HumanTypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/tic-tac-toe-singleplayer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +44,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mergedAIandLobby" />
+        <entry key="$PROJECT_DIR$" value="addedMessage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -221,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653238327125</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added play again for ai">
+      <created>1653283282798</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653283282798</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +253,7 @@
     <MESSAGE value="NullPointerException error, line 367" />
     <MESSAGE value="version w/ proper strings for requestjoin method" />
     <MESSAGE value="added send message humantype" />
-    <option name="LAST_COMMIT_MESSAGE" value="added send message humantype" />
+    <MESSAGE value="added play again for ai" />
+    <option name="LAST_COMMIT_MESSAGE" value="added play again for ai" />
   </component>
 </project>

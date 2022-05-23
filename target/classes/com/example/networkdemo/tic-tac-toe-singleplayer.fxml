@@ -21,7 +21,7 @@
             <center>
                 <HBox alignment="CENTER_LEFT">
                     <children>
-                        <Label prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="You" textFill="white" />
+                        <Label prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="Computer" textFill="white" />
                         <Label fx:id="playerXScore" styleClass="scoreboard-subtext" text="0" textFill="white" />
                     </children>
                 </HBox>
@@ -29,7 +29,7 @@
             <bottom>
                 <HBox>
                     <children>
-                        <Label fx:id="Computer" prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="Computer" textFill="white" />
+                        <Label fx:id="Computer" prefHeight="20.0" prefWidth="160.0" styleClass="scoreboard-subtext" text="You" textFill="white" />
                         <Label fx:id="playerOScore" styleClass="scoreboard-subtext" text="0" textFill="white" />
                     </children>
                 </HBox>

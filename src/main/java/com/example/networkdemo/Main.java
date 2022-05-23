@@ -21,6 +21,7 @@ import java.util.Vector;
 public class Main extends Application {
 
     static char token;  // token of this client
+    static char storeToken;
     static String room_id = " ";  // room id of this client
     static char currentToken = 'X';
     static String userName = "VANN";
@@ -134,6 +135,7 @@ public class Main extends Application {
                                         if (soloPlayer.getUserName().equals(userName)) {
                                             room_id = soloPlayer.getRoom_id();
                                             token = soloPlayer.getToken();
+                                            storeToken = token;
                                             System.out.println(token);
                                             System.out.println(room_id);
                                             SceneController.switchToTicTacToeSingleplayer(stage);
@@ -146,6 +148,7 @@ public class Main extends Application {
                                         if (thisPlayer.getUserName().equals(userName)) {
                                             room_id = thisPlayer.getRoom_id();
                                             token = thisPlayer.getToken();
+                                            storeToken = token;
                                             System.out.println(token);
                                             System.out.println(room_id);
                                             SceneController.switchToTicTacToeMultiplayer(stage);
@@ -158,6 +161,7 @@ public class Main extends Application {
 //
                                         if (thisPlayer2.getUserName().equals(userName)) {
                                             token = thisPlayer2.getToken();
+                                            storeToken = token;
                                             room_id = thisPlayer2.getRoom_id();
                                             System.out.println(token);
                                             System.out.println(room_id);
@@ -196,6 +200,8 @@ public class Main extends Application {
                                         if (room_id.equals(moveWithWinner.getRoom_id())) {
                                             editor.updateScoreboard(moveWithWinner.getToken());
                                             //editor.resetBoard();
+                                            token = 't';
+
                                         }
                                         break;
                                     case "TIE":
@@ -237,11 +243,12 @@ public class Main extends Application {
                                             System.out.println("This is i\n");
                                         }
                                         break;
-                                    case "PLAYAGAIN_ACCEPTED":
+                                    case "PLAYAGAIN_ACCEPTED": //same logic as REMATCH_ACCEPTED, only diff humantypes messages
                                     case "REMATCH_ACCEPTED":
                                         String game = (String) message.getData();
                                         if(room_id.equals(game)){
                                             editor.resetBoard(); //clear board visually also
+                                            token = storeToken;
                                         }
                                         break;
                                     case "REMATCH_REJECTED":
@@ -260,12 +267,6 @@ public class Main extends Application {
                                             System.out.println("Received message");
                                         }
                                         break;
-//                                    case "PLAYAGAIN_ACCEPTED":
-//                                        String aiGame = (String) message.getData();
-//                                        if(room_id.equals(aiGame)){
-//                                            editor.resetBoard(); //clear board visually also
-//                                        }
-//                                        break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");
                                 }

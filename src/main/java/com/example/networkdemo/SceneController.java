@@ -94,36 +94,23 @@ public class SceneController extends TicTacToe {
         sendMessage();
     }
 
-//    public void RequestJoinRoom(MouseEvent event) throws IOException{
-//        System.out.println("Join pressed");
-//        message = new Message(userName, HumanTypes.SEND_NAME);
-//        sendMessage();
-//        // edit - later on will send player's id
-//        message = new Message("F5gBzVr", HumanTypes.JOIN_GAME);
-//
-//        sendMessage();
-//    }
-
-public void RequestJoinRoom(MouseEvent event) throws IOException{
-    System.out.println("Join pressed");
-    message = new Message(userName, HumanTypes.SEND_NAME);
-    sendMessage();
-    // i added those 2 lines -----------------------------
-    String roomInfo = ((ListView<String>)(root.lookup("#myListView"))).getSelectionModel().getSelectedItem();
-    String room_id = roomInfo.split(":")[0];
-    // ---------------------------------------------------------
-    message = new Message(room_id, HumanTypes.JOIN_GAME);
-    sendMessage();
-}
+    public void RequestJoinRoom(MouseEvent event) throws IOException{
+        System.out.println("Join pressed");
+        message = new Message(userName, HumanTypes.SEND_NAME);
+        sendMessage();
+        // i added those 2 lines -----------------------------
+        String roomInfo = ((ListView<String>)(root.lookup("#myListView"))).getSelectionModel().getSelectedItem();
+        String room_id = roomInfo.split(":")[0];
+        // ---------------------------------------------------------
+        message = new Message(room_id, HumanTypes.JOIN_GAME);
+        sendMessage();
+    }
 
     @FXML
     GridPane board00;
 
     @FXML
     Button rematchButton;
-
-//    @FXML
-//    Button button01;
 
 
     public void updateLabel(char t) {
@@ -157,14 +144,8 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
         ((Label)(root.lookup("#playerlabel"))).setText("Player " + winner + " Wins Match");
         root.lookup("#rematchButton").setVisible(true);
 
-/*        Button butt = null;
-        butt = (Button) root.lookup("#rematchButton");
-
-        if (butt != null)
-            butt.setVisible(true);
-        else
-            System.out.println("button was null");*/
     }
+
 
 
     public void RequestLobby(ActionEvent event) throws IOException{
