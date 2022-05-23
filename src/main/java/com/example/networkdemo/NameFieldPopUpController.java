@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,6 +36,11 @@ public class NameFieldPopUpController {
             stage.close();
         }
 
+    }
+
+    public void UpdateInvalidNameField(Stage stage) {
+        // update the Text to display message for invalid username
+        ((Text)(stage.getScene().lookup("#greeting"))).setText("Username exists. Please enter  a different username");
     }
 
 }

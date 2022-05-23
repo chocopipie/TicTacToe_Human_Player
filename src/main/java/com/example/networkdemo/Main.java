@@ -82,6 +82,37 @@ public class Main extends Application {
 
     }
 
+    // launch pop up with invalid name message
+    private void launchInvalidPopUp(Stage stage) throws IOException {
+
+        // Create a new stage for pop up window
+        Stage popUpStage = new Stage();
+
+        // Load pop up fxml
+        Parent popUpRoot = FXMLLoader.load(getClass().getResource("/com/example/networkdemo/NameFieldPopUp.fxml"));
+
+        // Set pop up scene
+        popUpStage.setScene(new Scene(popUpRoot));
+
+        // change the greeting label to the invalid username message
+        NameFieldPopUpController np = new NameFieldPopUpController();
+        np.UpdateInvalidNameField(popUpStage);
+
+        // Removes minimize, maximize and close buttons
+        // To add close button but not minimize or maximize buttons use StageStyle.Utility
+        popUpStage.initStyle(StageStyle.UNDECORATED);
+
+        // Causes popUpStage to become pop up
+        popUpStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Bind popUpStage to its initial owner
+        popUpStage.initOwner(stage);
+
+        // Wait for pop up to close before returning to Welcome Screen
+        popUpStage.showAndWait();
+
+    }
+
     private void connectToServer(Stage stage) throws IOException {
 
         try {
@@ -101,6 +132,11 @@ public class Main extends Application {
             public void run() {
 
                 try {
+                    // send username at the beginning
+                    Message message1 = new Message(userName, HumanTypes.SEND_NEW_USERNAME);
+                    toServer.writeObject(message1);
+                    toServer.reset();
+
                     while (true) {
 
                         // read the message sent to this client
@@ -119,6 +155,17 @@ public class Main extends Application {
 
                             try {
                                 switch (type) {
+
+                                    case "USERNAME_EXISTS" :
+
+                                        System.out.println("Username existed.");
+                                        launchInvalidPopUp(stage);
+
+                                        // send username at the beginning
+                                        Message message2 = new Message(userName, HumanTypes.SEND_NEW_USERNAME);
+                                        toServer.writeObject(message2);
+                                        toServer.reset();
+                                        break;
 
                                     case "JOIN_LOBBY":
                                         String clientName = (String) message.getData();
@@ -207,6 +254,7 @@ public class Main extends Application {
                                     case "TIE":
                                         String currentRoomID = (String) message.getData();
                                         if (room_id.equals(currentRoomID))
+                                            editor.UpdateTie();
                                             //editor.resetBoard();
                                         break;
                                     case "SEND_GAMECHANNEL":

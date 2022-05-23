@@ -146,6 +146,11 @@ public class SceneController extends TicTacToe {
 
     }
 
+    public void UpdateTie() {
+        ((Label)(root.lookup("#playerlabel"))).setText("Game Tie!");
+        root.lookup("#rematchButton").setVisible(true);
+    }
+
 
 
     public void RequestLobby(ActionEvent event) throws IOException{
