@@ -304,10 +304,15 @@ public void RequestJoinRoom(MouseEvent event) throws IOException{
         ((Button)(root.lookup("#button8"))).setUserData(null);
         ((Button)(root.lookup("#button9"))).setUserData(null);
 
+        ((Label)(root.lookup("#playerlabel"))).setText("Get Ready!");
+
     }
 
-    public void Restart(ActionEvent event) {
-
+    public void Restart(ActionEvent event) throws IOException{
+        //send play again message, along with username
+        //message = new Message(userName, HumanTypes.PLAY_AGAIN);
+        message = new Message(aiGame.getRoomID(), HumanTypes.PLAY_AGAIN);
+        sendMessage();
     }
 
     @FXML

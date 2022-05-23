@@ -28,6 +28,7 @@ public class Main extends Application {
     static ObjectOutputStream toServer = null;
 
     static GameRoom currentGame;
+    static GameRoom aiGame;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -137,6 +138,7 @@ public class Main extends Application {
                                             System.out.println(room_id);
                                             SceneController.switchToTicTacToeSingleplayer(stage);
                                         }
+                                        aiGame = aiRoom;
                                         break;
                                     case "MULTIGAME_CREATED":
                                         GameRoom playersRoom = (GameRoom) message.getData();
@@ -235,6 +237,7 @@ public class Main extends Application {
                                             System.out.println("This is i\n");
                                         }
                                         break;
+                                    case "PLAYAGAIN_ACCEPTED":
                                     case "REMATCH_ACCEPTED":
                                         String game = (String) message.getData();
                                         if(room_id.equals(game)){
@@ -251,13 +254,18 @@ public class Main extends Application {
                                         TextMessage tm = (TextMessage)message.getData();
                                         String roomID = tm.getRoomID();
 
-
                                         //if it is the current game room, then append text to text area
                                         if(currentGame.getRoomID().equals(roomID)){
                                             editor.appendMessage(tm);
                                             System.out.println("Received message");
                                         }
                                         break;
+//                                    case "PLAYAGAIN_ACCEPTED":
+//                                        String aiGame = (String) message.getData();
+//                                        if(room_id.equals(aiGame)){
+//                                            editor.resetBoard(); //clear board visually also
+//                                        }
+//                                        break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");
                                 }
