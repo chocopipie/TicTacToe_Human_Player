@@ -211,6 +211,7 @@ public class Main extends Application {
                                         HumanPlayer thisPlayer2 = roomJoined.getPlayer2();
 //
                                         if (thisPlayer2.getUserName().equals(userName)) {
+                                            currentGame = roomJoined;
                                             token = thisPlayer2.getToken();
                                             storeToken = token;
                                             room_id = thisPlayer2.getRoom_id();
@@ -219,7 +220,9 @@ public class Main extends Application {
 //                                            currentGame = roomJoined;
                                             SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
-                                        currentGame = roomJoined;
+                                        if (roomJoined.getPlayer1().getUserName().equals(userName))
+                                            currentGame = roomJoined;
+
                                         break;
                                     case "JOIN_FAIL":
                                         System.out.println(message.getData());
