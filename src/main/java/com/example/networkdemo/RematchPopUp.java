@@ -41,6 +41,7 @@ public class RematchPopUp {
             System.out.println("Send REMATCH_REJECTED");
             //send room id, with message type
             Object message = new Message(Main.currentGame.getRoomID(), HumanTypes.REMATCH_REJECT);
+
             toServer.writeObject(message);
             toServer.reset();
             stage.close();

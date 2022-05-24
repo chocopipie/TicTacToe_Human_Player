@@ -73,6 +73,9 @@ public class Main extends Application {
         popUpStage.initOwner(stage);
         popUpStage.centerOnScreen();
 
+        popUpStage.setX(stage.getX()+350);
+        popUpStage.setY(stage.getY()+200);
+
         // Wait for pop up to close before returning to Welcome Screen
         if (showAndWait == true) {
             popUpStage.showAndWait();
@@ -198,6 +201,7 @@ public class Main extends Application {
                                             storeToken = token;
                                             System.out.println(token);
                                             System.out.println(room_id);
+
                                             SceneController.switchToTicTacToeMultiplayer(stage);
                                         }
                                         break;
