@@ -1,0 +1,43 @@
+root {
+    display: block;
+}
+/*The .root style class is applied to the root node of the Scene instance.
+* Since all nodes in a scene are descendant of the root node, styles in
+* the .root class are applied to all the nodes..root class can be used to
+* define default values for font-size, font-family etc. to provide
+* consistency in the UI.*/
+.root {
+    -fx-pref-width: 960px;
+    -fx-pref-height: 480px;
+    -fx-background-image: url(../../../images/woodTexture.jpg);
+        -fx-border-color: #ff8000;
+        -fx-border-width: 3 2 2 2;
+}
+#header {
+/*    -fx-translate-x: 425;
+    -fx-translate-y: 400;
+    -fx-pref-width: 150;*/
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+/*For all buttons*/
+/*Sets button background, button size, text size and text color*/
+.button {
+    -fx-background-image: url(../../../images/buttonTexture.png);
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+}
+/*Adds the single-player image to a button*/
+.single-player-button {
+    -fx-graphic: url(../../../images/person.png);
+}
+/*Adds the multi-player image to a button*/
+.multi-player-button {
+    -fx-graphic: url(../../../images/person-group.png);
+}
+/*For all buttons*/
+/*Highlights the button, the mouse is over*/
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}

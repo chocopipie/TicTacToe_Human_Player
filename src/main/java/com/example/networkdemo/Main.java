@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+import javafx.stage.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -15,17 +15,21 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 //client
 public class Main extends Application {
 
     static char token;  // token of this client
-    static String room_id;  // room id of this client
+    static char storeToken;
+    static String room_id = " ";  // room id of this client
     static char currentToken = 'X';
-
+    static String userName = "VANN";
     static ObjectInputStream fromServer = null;
     static ObjectOutputStream toServer = null;
-    private List<HumanPlayer> human=new ArrayList<HumanPlayer>();
+
+    static GameRoom currentGame;
+    static GameRoom aiGame;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -39,14 +43,77 @@ public class Main extends Application {
         scene.setFill(Color.BLUE);
         stage.show();
 
+        launchPopUp (stage, "NameFieldPopUp", true);
+
+        System.out.println("Username: " + userName);
+
         //then, connect to server
         connectToServer(stage);
     }
 
-    private void connectToServer(Stage stage) throws IOException {
+    private void launchPopUp (Stage stage, String popUpName, boolean showAndWait) throws IOException {
 
-        //create human => think it needs to be changed later
-        human.add (new HumanPlayer("Player#" + human.size()+1));
+        // Create a new stage for pop up window
+        Stage popUpStage = new Stage();
+
+        // Load pop up fxml
+        Parent popUpRoot = FXMLLoader.load(getClass().getResource("/com/example/networkdemo/" + popUpName +".fxml"));
+
+        // Set pop up scene
+        popUpStage.setScene(new Scene(popUpRoot));
+
+        // Removes minimize, maximize and close buttons
+        // To add close button but not minimize or maximize buttons use StageStyle.Utility
+        popUpStage.initStyle(StageStyle.UNDECORATED);
+
+        // Causes popUpStage to become pop up
+        popUpStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Bind popUpStage to its initial owner
+        popUpStage.initOwner(stage);
+        popUpStage.centerOnScreen();
+
+        // Wait for pop up to close before returning to Welcome Screen
+        if (showAndWait == true) {
+            popUpStage.showAndWait();
+        }
+        else
+            popUpStage.show();
+
+    }
+
+    // launch pop up with invalid name message
+    private void launchInvalidPopUp(Stage stage) throws IOException {
+
+        // Create a new stage for pop up window
+        Stage popUpStage = new Stage();
+
+        // Load pop up fxml
+        Parent popUpRoot = FXMLLoader.load(getClass().getResource("/com/example/networkdemo/NameFieldPopUp.fxml"));
+
+        // Set pop up scene
+        popUpStage.setScene(new Scene(popUpRoot));
+
+        // change the greeting label to the invalid username message
+        NameFieldPopUpController np = new NameFieldPopUpController();
+        np.UpdateInvalidNameField(popUpStage);
+
+        // Removes minimize, maximize and close buttons
+        // To add close button but not minimize or maximize buttons use StageStyle.Utility
+        popUpStage.initStyle(StageStyle.UNDECORATED);
+
+        // Causes popUpStage to become pop up
+        popUpStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Bind popUpStage to its initial owner
+        popUpStage.initOwner(stage);
+
+        // Wait for pop up to close before returning to Welcome Screen
+        popUpStage.showAndWait();
+
+    }
+
+    private void connectToServer(Stage stage) throws IOException {
 
         try {
             // Create a socket to connect to the server
@@ -60,18 +127,16 @@ public class Main extends Application {
             ex.printStackTrace();
         }
 
-        //send message to server (initially, message set from either RequestMultiGame or ReuestSoloGame
-//        Message msg = (Message) SceneController.sendMessage();
-//
-//        System.out.println("msg ts: " + String.valueOf(msg.getType()));
-//
-//        toServer.writeObject(msg);
-
         new Thread(new Runnable() {
             @Override
             public void run() {
 
                 try {
+                    // send username at the beginning
+                    Message message1 = new Message(userName, HumanTypes.SEND_NEW_USERNAME);
+                    toServer.writeObject(message1);
+                    toServer.reset();
+
                     while (true) {
 
                         // read the message sent to this client
@@ -82,37 +147,78 @@ public class Main extends Application {
                         String type = String.valueOf(message.getType());
                         System.out.println("type of message: " + type);
 
+
                         Platform.runLater(() -> {
                             // Display to the text area
 //                        ta.appendText(mess.getType().getDescription() + "\n");
-
                             SceneController editor = new SceneController();
 
                             try {
                                 switch (type) {
-                                    case "MULTIGAME_CREATED":
-                                        SceneController.switchToTicTacToeMultiplayer(stage);
-                                        //token = (char)message.getData();
-                                        //System.out.println(token);
 
-                                        // get room created, the token
+                                    case "USERNAME_EXISTS" :
+
+                                        System.out.println("Username existed.");
+                                        launchInvalidPopUp(stage);
+
+                                        // send username at the beginning
+                                        Message message2 = new Message(userName, HumanTypes.SEND_NEW_USERNAME);
+                                        toServer.writeObject(message2);
+                                        toServer.reset();
+                                        break;
+
+                                    case "JOIN_LOBBY":
+                                        String clientName = (String) message.getData();
+                                        System.out.println("clientName:" + clientName);
+                                        System.out.println();
+
+                                        System.out.println(clientName);
+                                        if (userName.equals(clientName))
+                                            editor.switchToLobby(stage);
+                                        break;
+                                    case "SOLOGAME_CREATED" :
+                                        GameRoom aiRoom = (GameRoom) message.getData();
+                                        HumanPlayer soloPlayer = aiRoom.getPlayer1();
+                                        if (soloPlayer.getUserName().equals(userName)) {
+                                            room_id = soloPlayer.getRoom_id();
+                                            token = soloPlayer.getToken();
+                                            storeToken = token;
+                                            System.out.println(token);
+                                            System.out.println(room_id);
+                                            SceneController.switchToTicTacToeSingleplayer(stage);
+                                        }
+                                        aiGame = aiRoom;
+                                        break;
+                                    case "MULTIGAME_CREATED":
                                         GameRoom playersRoom = (GameRoom) message.getData();
                                         HumanPlayer thisPlayer = playersRoom.getPlayer1();
-                                        token = thisPlayer.getToken();
-                                        System.out.println(token);
-                                        break;
-                                    case "ROOM_ADDED":
-                                        String room_id = (String) message.getData();
-                                        // later, this room will be added to the list of rooms on ui
-                                        System.out.println(room_id);
+                                        if (thisPlayer.getUserName().equals(userName)) {
+                                            room_id = thisPlayer.getRoom_id();
+                                            token = thisPlayer.getToken();
+                                            storeToken = token;
+                                            System.out.println(token);
+                                            System.out.println(room_id);
+                                            SceneController.switchToTicTacToeMultiplayer(stage);
+                                        }
                                         break;
                                     case "JOIN_SUCCESS":
                                         // get room created, the token
                                         GameRoom roomJoined = (GameRoom) message.getData();
                                         HumanPlayer thisPlayer2 = roomJoined.getPlayer2();
-                                        token = thisPlayer2.getToken();
-                                        System.out.println(token);
-                                        SceneController.switchToTicTacToeMultiplayer(stage);
+//
+                                        if (thisPlayer2.getUserName().equals(userName)) {
+                                            currentGame = roomJoined;
+                                            token = thisPlayer2.getToken();
+                                            storeToken = token;
+                                            room_id = thisPlayer2.getRoom_id();
+                                            System.out.println(token);
+                                            System.out.println(room_id);
+//                                            currentGame = roomJoined;
+                                            SceneController.switchToTicTacToeMultiplayer(stage);
+                                        }
+                                        if (roomJoined.getPlayer1().getUserName().equals(userName))
+                                            currentGame = roomJoined;
+
                                         break;
                                     case "JOIN_FAIL":
                                         System.out.println(message.getData());
@@ -123,21 +229,93 @@ public class Main extends Application {
                                         break;
                                     case "MOVE_MADE" :
                                         Move move = (Move)message.getData();
-                                        editor.setMove(move.getX(), move.getY(), move.getToken());
+                                        System.out.println("MY ID: " + room_id);
+                                        System.out.println("CURRENT ID: " + move.getRoom_id());
+                                        //editor.setMove(move.getX(), move.getY(), move.getToken());
+                                        if (room_id.equals(move.getRoom_id()))
+                                            editor.setMove(move);
                                         break;
                                     case "MOVE_REJECTED" :
                                         break;
                                     case "PLAYER_TURN" :
-                                        currentToken = (char) message.getData();
-                                        editor.updateLabel(currentToken);
-                                        System.out.println("Current token is: " + currentToken);
+                                        Move moveWithTokenChanged = (Move) message.getData();
+                                        if (room_id.equals(moveWithTokenChanged.getRoom_id())) {
+                                            currentToken = moveWithTokenChanged.getToken();
+                                            editor.updateLabel(currentToken);
+                                            System.out.println("Current token is: " + currentToken);
+                                        }
                                         break;
                                     case "WINNER" :
-                                        editor.updateScoreboard((char) message.getData());
-                                        editor.resetBoard();
+                                        Move moveWithWinner = (Move) message.getData();
+                                        if (room_id.equals(moveWithWinner.getRoom_id())) {
+                                            editor.updateScoreboard(moveWithWinner.getToken());
+                                            //editor.resetBoard();
+                                            token = 't';
+                                        }
                                         break;
                                     case "TIE":
-                                        editor.resetBoard();
+                                        String currentRoomID = (String) message.getData();
+                                        if (room_id.equals(currentRoomID))
+                                            editor.UpdateTie();
+                                            //editor.resetBoard();
+                                        break;
+                                    case "SEND_GAMECHANNEL":
+                                        RoomList rl = (RoomList) message.getData();
+                                        for(int i = 0; i < rl.size(); i++){
+                                            System.out.println("CHECKKK : " + rl.getGameRoomList().get(i).getRoomID());
+                                            System.out.println();
+                                        }
+
+                                        Vector<GameRoom> l = rl.getGameRoomList();
+                                        LobbyController lc = new LobbyController();
+                                        //lobbyCont.updateLobby(l,stage);
+                                        lc.updateLobby(l);
+//                                        if(currentGame.getPlayer1().getUserName() ==" " && currentGame.getPlayer1().getUserName() ==" " )
+//                                            editor.switchToLobby(stage);
+                                        break;
+
+                                    case "ROOM_ADDED":
+                                        RoomList roomList = (RoomList) message.getData();
+                                        System.out.println("ROOM LIST SIZE : " + roomList.size());
+
+                                        Vector<GameRoom> list = roomList.getGameRoomList();
+                                        LobbyController roomAdded = new LobbyController();
+                                        roomAdded.updateLobby(list);
+                                        //editor.switchToLobby(stage);
+                                        if(currentGame.getPlayer1().getUserName() ==" " && currentGame.getPlayer1().getUserName() ==" " )
+                                            editor.switchToLobby(stage);
+                                        break;
+                                    case "REMATCH_REQUEST":
+                                        String rematchReceiver = (String)message.getData();
+
+                                        if(userName.equals(rematchReceiver)){
+                                            launchPopUp(stage, "rematchPopUp", false);
+                                            System.out.println("This is i\n");
+                                        }
+                                        break;
+                                    case "PLAYAGAIN_ACCEPTED": //same logic as REMATCH_ACCEPTED, only diff humantypes messages
+                                    case "REMATCH_ACCEPTED":
+                                        String game = (String) message.getData();
+                                        if(room_id.equals(game)){
+                                            editor.resetBoard(); //clear board visually also
+                                            token = storeToken;
+                                        }
+                                        break;
+                                    case "REMATCH_REJECTED":
+                                        String s = (String) message.getData();
+                                        if(room_id.equals(s)){
+                                            editor.switchToLobby(stage);
+                                        }
+                                        break;
+                                    case "SEND_MESSAGE":
+                                        TextMessage tm = (TextMessage)message.getData();
+                                        String roomID = tm.getRoomID();
+
+                                        //if it is the current game room, then append text to text area
+                                        if(currentGame.getRoomID().equals(roomID)){
+                                            editor.appendMessage(tm);
+                                            System.out.println("Received message");
+                                        }
                                         break;
                                     default:
                                         //System.out.println("Invalid Message Type\n");
@@ -156,9 +334,6 @@ public class Main extends Application {
                 }
             }
         }).start();
-
-
-
 
     }
 

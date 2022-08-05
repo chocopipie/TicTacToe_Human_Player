@@ -4,25 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="works with current Server: serverMessages2&#10;&#10;will add switch">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/SceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/TicTacToeUIBoard.java" afterDir="false" />
+    <list default="true" id="c4aba2a2-2a94-4c2c-adad-f3024a67a482" name="Changes" comment="changed">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/17_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Human_Player.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Human_Player.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_18_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_18_0_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/HumanPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/RematchPopUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/networkdemo/RematchPopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/AIPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/GameRoom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/HumanPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/HumanTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/LobbyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Move.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/NameFieldPopUpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/RematchPopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/RoomList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/SceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/TextMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/TicTacToe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/networkdemo/Typess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,7 +67,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="addedMessage" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,17 +82,30 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="28IUNyTmiyvK0aiAsjMTWqZkSSN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../javafx-sdk-18.0.1/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="HumanController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.networkdemo.HumanController" />
       <module name="Human_Player" />
@@ -81,8 +119,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.networkdemo.Main" />
+      <module name="Human_Player" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.networkdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HumanController" />
+      <item itemvalue="Application.Main" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.HumanController" />
       </list>
     </recent_temporary>
@@ -131,7 +187,84 @@
       <option name="project" value="LOCAL" />
       <updated>1650923987817</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added lobby fxml, no functionality rn">
+      <created>1651864882363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651864882363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="NullPointerException error, line 367">
+      <created>1651908003955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651908003955</updated>
+    </task>
+    <task id="LOCAL-00008" summary="NullPointerException error, line 367">
+      <created>1651910692200</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651910692200</updated>
+    </task>
+    <task id="LOCAL-00009" summary="NullPointerException error, line 367">
+      <created>1652070066955</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652070066955</updated>
+    </task>
+    <task id="LOCAL-00010" summary="NullPointerException error, line 367">
+      <created>1652077272714</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652077272715</updated>
+    </task>
+    <task id="LOCAL-00011" summary="NullPointerException error, line 367">
+      <created>1652077646167</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652077646167</updated>
+    </task>
+    <task id="LOCAL-00012" summary="NullPointerException error, line 367">
+      <created>1652077713892</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1652077713892</updated>
+    </task>
+    <task id="LOCAL-00013" summary="version w/ proper strings for requestjoin method">
+      <created>1652146171902</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652146171902</updated>
+    </task>
+    <task id="LOCAL-00014" summary="version w/ proper strings for requestjoin method">
+      <created>1653096775221</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1653096775222</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added send message humantype">
+      <created>1653238327125</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1653238327125</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added play again for ai">
+      <created>1653283282798</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653283282798</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +282,21 @@
     <MESSAGE value="Adding HumanController" />
     <MESSAGE value="Adding Move from Client" />
     <MESSAGE value="works with current Server: serverMessages2&#10;&#10;will add switch" />
-    <option name="LAST_COMMIT_MESSAGE" value="works with current Server: serverMessages2&#10;&#10;will add switch" />
+    <MESSAGE value="added lobby fxml, no functionality rn" />
+    <MESSAGE value="NullPointerException error, line 367" />
+    <MESSAGE value="version w/ proper strings for requestjoin method" />
+    <MESSAGE value="added send message humantype" />
+    <MESSAGE value="added play again for ai" />
+    <option name="LAST_COMMIT_MESSAGE" value="added play again for ai" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

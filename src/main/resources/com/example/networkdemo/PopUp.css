@@ -1,0 +1,30 @@
+root {
+    display: block;
+}
+.root {
+/*    -fx-pref-width: 1000px;
+    -fx-pref-height: 500px;*/
+    -fx-background-image: url(../../../images/woodTexture.jpg);
+        -fx-border-color: #ff8000;
+        -fx-border-width: 2 2 2 2;
+/*        -fx-background-size: 100% 100%;*/
+}
+/*.vbox {
+    -fx-background-image: url(../images/scoreBoard.png);
+    -fx-background-size: 90% 20%;
+    -fx-background-position: 0% 5%;
+    -fx-background-repeat: stretch;
+}*/
+
+/*When hovering over a button with action, the button lights up blue*/
+.action-button {
+    -fx-background-image: url(../../../images/buttonTexture.png);
+    -fx-background-size: 100% 100%;
+    -fx-background-position: center center;
+    -fx-background-color: transparent;
+    -fx-font-size: 15px;
+}
+
+.action-button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
